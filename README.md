@@ -23,7 +23,7 @@ install the required dependencies (remember to use a virtual environment!)
 $ pip install -r ./requirements.txt
 ```
 
-Remember, this downloads a CUDA-enabled version of PyTorch, which can take a while. If you don't have a CUDA-capable system, or don't wish to use CUDA for whatever reason, simply install PyTorch understanding
+Remember, this downloads a CUDA-enabled version of PyTorch, which can take a while. If you don't have a CUDA-capable system, or don't wish to use CUDA for whatever reason, simply install PyTorch using
 
 ```
 $ pip install torch

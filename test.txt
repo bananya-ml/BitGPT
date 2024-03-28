@@ -1,0 +1,1764 @@
+1. INTRODUCTION
+
+The Spitzer Space Telescope Legacy Surveys SAGE (Meixner
+et al. 2006) and SAGE-SMC (K. D. Gordon et al. 2010, in
+preparation) have made a comparative study of the infrared
+properties of massive stars at a range of metallicities possible
+for the ﬁrst time by imaging the Large and Small Magellanic
+Clouds (LMC and SMC). In Bonanos et al. (2009, hereafter
+Paper I), we presented infrared properties of massive stars in the
+LMC (at 0.5 Z(cid:3)). The motivation for that study was twofold:
+(1) to use the infrared excesses of massive stars to probe their
+winds, circumstellar gas, and dust, and (2) to provide a template
+for studies of other, more distant, galaxies. Paper I was the ﬁrst
+major compilation of accurate spectral types and multi-band
+photometry from 0.3 to 24 μm for massive stars in any galaxy,
+increasing by an order of magnitude the number of massive
+
+stars for which mid-infrared photometry was available. The
+recently completed SAGE-SMC survey offers the opportunity
+to extend the study of infrared properties of massive stars to a
+metallicity of approximately 0.2 Z(cid:3)(see, e.g., Hunter et al. 2007)
+and enables the investigation of their dependence on metallicity,
+at least over the range 0.2–0.5 Z(cid:3).
+
+Infrared excess in hot massive stars is primarily due to
+free–free emission from their ionized, line-driven, stellar winds.
+Panagia & Felli (1975) and Wright & Barlow (1975) ﬁrst
+computed the free–free emission from ionized envelopes of
+hot massive stars, as a function of the mass-loss rate ( ˙M)
+and the terminal velocity of the wind (v∞). The properties
+of massive stars, and in particular their stellar winds (which
+affect their evolution), are expected to depend on metallicity
+(Z). For example, Mokiem et al. (2007) found empirically that
+˙M ∼ Z0.83±0.16, in good agreement
+mass-loss rates scale as
+
+416
+
+No. 2, 2010
+
+SPITZER SAGE-SMC INFRARED PHOTOMETRY OF MASSIVE STARS IN SMC
+
+417
+
+with theoretical predictions (Vink et al. 2001). The expectation,
+therefore, is that the infrared excesses of OB stars in the SMC
+˙M is lower in the
+should be lower than in the LMC, given that
+SMC.14 Furthermore, there is strong evidence that the fraction
+of classical Be stars among B-type stars is higher at lower
+metallicity (possibly due to faster rotation, as measured by
+Martayan et al. 2007b). Grebel et al. (1992) were the ﬁrst to
+ﬁnd evidence for this, by showing that the cluster NGC 330 in
+the SMC has the largest fraction of Be stars of any known cluster
+in the Galaxy, LMC or SMC. More recent spectroscopic surveys
+(Martayan et al. 2010) have reinforced this result. In Paper I, we
+showed that the Be stars in the LMC are easily discriminated
+by their mid-infrared colors; we are therefore interested in a
+comparison with the SMC to quantify the global dependence of
+the Be star fraction on metallicity. The incidence of Be/X-ray
+binaries is also much higher in the SMC than in the LMC (Liu
+et al. 2005), while the incidence of Wolf–Rayet (W-R) stars
+is much lower; therefore, a comparison of infrared excesses
+for these objects is also of interest. Finally, there is interest in
+the metallicity dependence of the mid-infrared colors of red
+supergiants, which probe circumstellar dust.
+
+Following the same strategy as in Paper I, we compiled a
+catalog of massive stars, which we cross-matched in the SAGE-
+SMC database to study their infrared properties. This paper
+is organized as follows. Section 2 describes our spectroscopic
+and photometric catalogs of massive stars in the SMC, Section 3
+presents the resulting color–magnitude and two-color diagrams,
+and Section 4 presents the infrared excesses detected in various
+types of massive stars. Section 5 investigates the mass-loss rates
+in red supergiants and Section 6 summarizes our results.
+
+2. CATALOG OF MASSIVE STARS IN THE SMC
+
+As in Paper I, we have compiled a catalog of massive stars
+with known spectral types in the SMC from the literature.
+We then cross-matched the stars in the SAGE-SMC database,
+after incorporating optical and near-infrared photometry from
+recent surveys of the SMC. The resulting photometric catalog
+was used to study the infrared properties of the stars. In
+Section 2.1, we describe the spectral-type catalog compiled from
+the literature, in Section 2.2, the existing optical, near-infrared,
+and mid-infrared surveys of the SMC, which were included in
+the SAGE-SMC database, and in Section 2.3, the cross-matching
+procedure and the resulting photometric catalog.
+
+2.1. Spectral-type Catalog
+
+The criteria for inclusion in the spectral-type catalog of mas-
+sive SMC stars were the availability of accurate coordinates
+and accurate (mainly optical) spectral classiﬁcations that cor-
+respond to stars with masses (cid:2)8 M(cid:3). The 2dF Survey (2dFS;
+Evans et al. 2004a, 4161 objects) comprises the largest catalog
+of SMC stars with spectroscopic classiﬁcations and therefore
+makes up the backbone of our spectral-type catalog.15 Previous
+compilations (e.g., Azzopardi et al. 1975; Azzopardi & Vigneau
+1979, 1982) were included with updated coordinates from Brian
+Skiff’s lists16 and spectral types from the literature, when avail-
+able. The literature search resulted in 5324 entries. We do not
+claim completeness; however, we have targeted not only studies
+
+14 The dependence of v∞ on Z is negligible for this range of Z (see Leitherer
+et al. 1992; Evans et al. 2004b).
+15 By retaining all SMC stars from 2dFS, we are possibly including some stars
+with masses <8 M(cid:3).
+16 ftp://ftp.lowell.edu/pub/bas/starcats/
+
+Table 1
+Catalog of Spectral Types for 5324 SMC Massive Stars
+
+Star
+Namea
+2dFS0001
+2dFS0002
+2dFS0003
+2dFS0004
+2dFS0005
+2dFS0006
+2dFS0007
+2dFS0008
+
+R.A. (J2000)
+(deg)
+
+6.944625
+7.036375
+7.089875
+7.102458
+7.137542
+7.243000
+7.246125
+7.322250
+
+Decl. (J2000)
+(deg)
+−73.27911
+−73.49611
+−73.17531
+−73.88650
+−73.30739
+−73.46847
+−73.28139
+−73.14731
+
+Referenceb
+
+Classiﬁcation
+& Comments
+
+E04
+E04
+E04
+E04
+E04
+E04
+E04
+E04
+
+O9.5:
+B0-5V
+B0-5V
+B0-5III
+B0-5V
+A2II
+B1-3II
+B0-5IV
+
+Notes.
+a Star designations: Evans et al. (2dFS; 2004a), Azzopardi et al. (AzV; 1975);
+Azzopardi & Vigneau (AzV; 1979, 1982), Feast et al. (R; 1960), Sanduleak (Sk;
+1968, 1969), Massey et al. (MPG; 1989).
+b Reference key: A09, Antoniou et al. 2009; B95, Barb´a et al. 1995; 0B01,
+Bartzakos et al. 2001; F03, Foellmi et al. 2003; E04, Evans et al. 2004a; E06,
+Evans et al. 2006; E10, I. Hunter et al. 2010, in preparation; GC87, Garmany
+et al. 1987; H83, Humphreys 1983; H03, Harries et al. 2003; H05, Hilditch et al.
+2005; L97, Lennon 1997; L06, Levesque et al. 2006; L07, Levesque et al. 2007;
+MPG89, Massey et al. 1989; M95, Massey et al. 1995; M00, Massey et al. 2000;
+M02, Massey 2002; MO03, Massey & Olsen 2003; M03, Massey et al. 2003;
+M05, Massey et al. 2005; M06, Mennickent et al. 2006; M07, Martayan et al.
+2007a, 2007b; M09, Massey et al. 2009; P08, Prieto et al. 2008; R05, Raguzova
+& Popov 2005; SB97, Smith Neubig & Bruhweiler 1997; W07, Wisniewski
+et al. 2007; Z06, Zickgraf 2006.
+
+(This table is available in its entirety in machine-readable and Virtual Obser-
+vatory (VO) forms in the online journal. A portion is shown here for guidance
+regarding its form and content.)
+
+of hot massive stars (deﬁned by their spectral types) in individ-
+ual clusters and OB associations, but also studies of particular
+types of massive stars. The largest of these include the survey of
+B and Be stars in NGC 330 (Martayan et al. 2007a, 2007b, 314
+stars), the VLT-FLAMES Survey of Massive Stars in NGC 330
+and NGC 346 (Evans et al. 2006, 232 stars), and unpublished
+additional FLAMES observations in NGC 346 (PI: Evans; I.
+Hunter et al. 2010, in preparation, 244 OB & A-type stars).
+We have also added the three known luminous blue variables
+(LBVs), ﬁve supergiant B[e] stars (Zickgraf 2006), 69 Be/X-ray
+binaries (with spectral types from the updated online catalog17
+of Raguzova & Popov 2005), early-type eclipsing and spectro-
+scopic binaries, and red supergiants (Massey & Olsen 2003;
+Levesque et al. 2006, 2007, 107 stars). The completeness of
+the catalog depends on the spectral type, e.g., it is ∼4% for the
+unevolved O stars in our catalog (out of an estimated total of
+2800 unevolved stars with masses >20 M(cid:3) in the SMC; Massey
+2010), while the W-R catalog (Massey et al. 2003) is thought to
+be close to complete.
+
+Table 1 presents our catalog of 5324 massive stars, sorted by
+R.A., listing: the star name(s), coordinates in degrees (J2000.0),
+the reference, and corresponding spectral classiﬁcation. The
+names of the stars are taken from the corresponding reference.
+The spectral classiﬁcations in the catalog are typically accurate
+to one spectral type and one luminosity class. We retained about
+a dozen stars from the above studies with only approximate
+spectral types (e.g., “early B”). For double entries, we selected
+the most precise spectral classiﬁcation available, usually corre-
+sponding to the most recent reference.
+
+17 http://xray.sai.msu.ru/∼raguzova/BeXcat/
+
+418
+
+BONANOS ET AL.
+
+Vol. 140
+
+2.2. Optical and Infrared Surveys of the SMC
+
+Several large optical and infrared photometric catalogs of the
+SMC have recently become available, enabling us to obtain
+accurate photometry for its massive star population in the
+wavelength range 0.3–8 μm and in some cases up to 24 μm.
+The optical surveys are as follows: the UBVR catalog of Massey
+(2002) with 85,000 bright stars in an area covering 7.2 deg2, the
+UBVI Magellanic Clouds Photometric Survey (MCPS; Zaritsky
+et al. 2002) including 5.1 million stars in the central 18 deg2 of
+the SMC, and the OGLE III catalog containing V I photometry
+of 6.2 million stars covering 14 deg2 (Udalski et al. 2008). The
+angular resolution is ∼2.(cid:6)(cid:6)6 for the catalog of Massey (2002),
+∼1.(cid:6)(cid:6)5 for MCPS, and ∼1.(cid:6)(cid:6)2 for OGLE III.
+
+The existing near-infrared photometric catalogs include: the
+Two Micron All Sky Survey (2MASS; Skrutskie et al. 2006,
+extended by 6X2MASS) and the targeted IRSF survey (Kato
+et al. 2007), which contains 2.8 million sources in the central
+11 deg2 of the SMC. 2MASS has a pixel scale of 2.(cid:6)(cid:6)0 pixel−1,
+an average seeing of 2.(cid:6)(cid:6)5 and limiting magnitudes of J = 15.8,
+H = 15.1, and Ks = 14.3. IRSF has a pixel scale of 0.(cid:6)(cid:6)45
+pixel−1, average seeing of 1.(cid:6)(cid:6)3, 1.(cid:6)(cid:6)2, and 1.(cid:6)(cid:6)1 in the JHKs bands,
+respectively, and limiting magnitudes of J = 18.8, H = 17.8,
+and Ks = 16.6. In the mid-infrared, the Spitzer SAGE-SMC
+survey uniformly imaged the whole SMC (∼30 deg2) in the
+IRAC and MIPS bands on two epochs in 2007–2008 (K. D.
+Gordon et al. 2010, in preparation). The survey has recently
+produced a combined mosaic catalog of 1.2 million sources.
+IRAC, with a pixel scale of 1.(cid:6)(cid:6)2 pixel−1, yields an angular
+resolution of 1.(cid:6)(cid:6)7–2.(cid:6)(cid:6)0 and MIPS at 24 μm has a resolution
+of 6(cid:6)(cid:6).
+
+Given the variation in the depth, resolution, and spatial
+coverage of these surveys, we included the available photometry
+for the massive stars in our catalog from all
+the MCPS,
+OGLE III, 2MASS, IRSF, and SAGE-SMC catalogs. MCPS
+has incorporated the catalog of Massey (2002) for bright stars
+common to both catalogs. Photometry of higher accuracy,
+particularly in the optical, exists in the literature for many of
+the stars in our catalog; however, it was not included in favor of
+uniformity.
+
+2.3. Photometric Catalog
+
+2.3.1. Matching Procedure
+
+We used the following SAGE-SMC data products to search
+for the mid-infrared counterparts to the 5324 massive stars listed
+in Table 1: the v1.0 IRAC Catalog containing IRAC Epoch 1 data
+bandmerged with All-Sky 2MASS and 6X2MASS catalogs, and
+the MIPS 24 μm Epoch 1 Catalog. The details about the SAGE-
+SMC data processing and Legacy data products can be found in
+K. D. Gordon et al. (2010, in preparation) and in “The SAGE-
+SMC Data Description: Delivery 1” document available at the
+NASA/IPAC Infrared Science Archive Web site.18 The IRAC
+catalog and MIPS 24 μm catalog contain high-reliability sources
+and are subsets of more complete, but less reliable source lists:
+the IRAC Archive and MIPS 24 μm full list (see the data delivery
+document for a comparison between the catalogs and archives/
+full lists).
+
+We started constructing the photometric catalog for the mas-
+sive stars in our list by selecting their SAGE-SMC IRAC Epoch
+1 Catalog counterparts. We performed a conservative neighbor
+search with a 1(cid:6)(cid:6) search radius and selected the closest match
+
+Table 2
+Statistics for the 3654 Matched Stars
+
+Catalogs Matched
+
+IRACC
+IRACC+IRSF
+IRACC+IRSF+OGLE
+IRACC+MCPS
+IRACC+MCPS+IRSF
+IRACC+MCPS+IRSF+OGLE
+IRACC+MCPS+OGLE
+IRACC+MCPS+MIPS24
+IRACC+MIPS24
+IRACC+MIPS24+IRSF
+IRACC+MIPS24+IRSF+OGLE
+IRACC+MIPS24+MCPS+IRSF
+IRACC+MIPS24+MCPS+IRSF+OGLE
+IRACC+OGLE
+
+Stars
+
+40
+214
+352
+3
+57
+2733
+54
+3
+6
+35
+10
+80
+32
+35
+
+for each source. We found mid-infrared counterparts for 3654
+out of 5324 sources. The IRAC Epoch 1 catalog (IRACC),
+MIPS 24 μm catalog, IRSF, MCPS, and OGLE III catalogs
+were crossed-matched in the SAGE-SMC database19 to pro-
+vide photometry for sources over a wavelength range from 0.3
+to 24 μm. We used this “universal catalog” to extract multi-
+wavelength photometry for IRAC sources matched to the mas-
+sive stars. Speciﬁcally, for IRAC sources with one or more
+matches in other catalogs (all but 5), we only considered the clos-
+est matches between sources from any two available catalogs
+(IRAC-MIPS24, IRAC-MCPS, MIPS24-MCPS, IRAC-IRSF,
+MIPS24-IRSF, IRAC-OGLE III, MIPS24-OGLE III), with dis-
+tances between the matched sources of (cid:3)1(cid:6)(cid:6). For example, for
+a match between the IRAC, MIPS 24 μm, and MCPS catalogs
+(IRAC-MIPS24-MCPS), we applied these constraints on the
+IRAC-MIPS24, MIPS24-MCPS, and IRAC-MCPS matches. If
+the match was not the closest one or the distance was >1(cid:6)(cid:6),
+we dropped the pair. These stringent criteria were used to en-
+sure that sources from individual catalogs for each multi-catalog
+match refer to the same star. Table 2 shows the breakdown of
+the matched stars to the catalogs, such that 40 stars were only
+matched to the IRACC, 214 only to the IRACC+IRSF catalogs,
+etc.
+
+2.3.2. Catalog Description
+
+Table 3 presents our ﬁnal matched catalog of 3654 stars, with
+the star name, IRAC designation, UBVIJHKs+IRAC+MIPS24
+photometry and errors, reference paper, corresponding spectral
+classiﬁcation and comments, sorted by increasing R.A. Overall,
+the photometry is presented in order of shortest to longest
+wavelength. The 17 columns of photometry are presented in the
+following order: UBVI from MCPS, V I from OGLE III, JHKs
+from 2MASS, JHKs from IRSF, IRAC 3.6, 4.5, 5.8, 8.0 μm
+(or [3.6], [4.5], [5.8], [8.0]), and MIPS 24 μm (or [24]). A
+column with the associated error follows each measurement,
+except for the V I photometry from OGLE III. Henceforth,
+JHKs magnitudes refer to 2MASS photometry, whereas IRSF
+photometry is denoted by a subscript, e.g., JIRSF. All magnitudes
+are calibrated relative to Vega (e.g., see Reach et al. 2005, for
+IRAC). In Table 4, we summarize the characteristics of each
+ﬁlter: the effective wavelength λeff, zero magnitude ﬂux (in Jy),
+angular resolution, and the number of detected stars in each
+ﬁlter.
+
+18 http://irsa.ipac.caltech.edu/data/SPITZER/SAGE/
+
+19 http://mastweb.stsci.edu/scasjobs/
+
+No. 2, 2010
+
+SPITZER SAGE-SMC INFRARED PHOTOMETRY OF MASSIVE STARS IN SMC
+
+419
+
+Table 3
+0.3–24 μm Photometry of 3654 Massive Stars in the SMC
+
+Star Namea
+2dFS0005
+2dFS0006
+2dFS0010
+2dFS0016
+2dFS0019
+2dFS0024
+2dFS0026
+
+IRAC Designation
+J002832.82 − 731827.0
+J002858.15 − 732807.0
+J002923.69 − 734424.6
+J003033.08 − 735709.9
+J003049.36 − 740000.3
+J003107.03 − 732709.9
+J003111.52 − 735936.1
+
+R.A. (J2000) Decl. (J2000)
+−73.30739
+−73.46848
+−73.73997
+−73.95272
+−73.99995
+−73.45267
+−73.99333
+
+7.137542
+7.243
+7.349375
+7.6385
+7.706292
+7.780042
+7.798458
+
+U
+
+16.33
+16.648
+16.706
+15.977
+16.006
+16.611
+15.744
+
+σU
+0.042
+0.048
+0.041
+0.052
+0.05
+0.114
+0.049
+
+B
+
+17.063
+16.605
+17.318
+16.051
+16
+17.119
+16.292
+
+σB
+0.023
+0.056
+0.033
+0.03
+0.041
+0.034
+0.033
+
+...
+
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+
+Referenceb
+E04
+E04
+E04
+E04
+E04
+E04
+E04
+
+Classiﬁcation & Comments
+B0 − 5V
+A2II
+B0 − 5V
+A0II
+A0II
+B3IV
+B1 − 3V
+
+Notes.
+a Star designations: Evans et al. (2dFS; 2004a), Azzopardi et al. (AzV; 1975); Azzopardi & Vigneau (AzV; 1979, 1982), Feast et al. (R; 1960), Sanduleak (Sk;
+1968, 1969), and Massey et al. (MPG; 1989).
+b Reference key: B95, Barb´a et al. 1995; B01, Bartzakos et al. 2001; E04, Evans et al. 2004a; E06, Evans et al. 2006; E10, I. Hunter et al. 2010, in preparation;
+F03, Foellmi et al. 2003; GC87, Garmany et al. 1987; H83, Humphreys 1983; H03, Harries et al. 2003; H05, Hilditch et al. 2005; L97, Lennon 1997; L06,
+Levesque et al. 2006; L07, Levesque et al. 2007; MPG89, Massey et al. 1989; M95, Massey et al. 1995; M02, Massey 2002; MO03, Massey & Olsen 2003; M06,
+Mennickent et al. 2006; M07, Martayan et al. 2007a, 2007b; M09, Massey et al. 2009; P08, Prieto et al. 2008; R05, Raguzova & Popov 2005; SB97, Smith Neubig
+& Bruhweiler 1997; W07, Wisniewski et al. 2007; Z06, Zickgraf 2006.
+
+(This table is available in its entirety in machine-readable and Virtual Observatory (VO) forms in the online journal. A portion is shown here for guidance regarding
+its form and content.)
+
+Table 4
+Filter and Detection Characteristics
+
+λeff
+(μm)
+
+0.36
+0.44
+0.555
+0.79
+0.555
+0.79
+1.235
+1.662
+2.159
+1.235
+1.662
+2.159
+3.55
+4.493
+5.731
+7.872
+23.68
+
+Zero Mag
+Flux (Jy)
+
+1790
+4063
+3636
+2416
+3636
+2416
+1594
+1024
+666.7
+1594
+1024
+666.7
+280.9
+179.7
+115.0
+64.13
+7.14
+
+Resolution
+((cid:6)(cid:6))
+1.5/2.6
+1.5/2.6
+1.5/2.6
+1.5/2.6
+1.2
+1.2
+2.5
+2.5
+2.5
+1.3
+1.3
+1.3
+1.7
+1.7
+1.9
+2
+6
+
+Stars
+Detected
+
+2921
+2962
+2962
+2844
+3152
+3166
+3039
+3007
+2789
+3449
+3413
+3345
+3509
+3111
+1038
+509
+166
+
+Filter
+
+U
+B
+V
+I
+VOGLE
+IOGLE
+J
+H
+Ks
+JIRSF
+HIRSF
+KsIRSF
+[3.6]
+[4.5]
+[5.8]
+[8.0]
+[24]
+
+The spatial distribution of our 3654 matched sources is shown
+in Figure 1, overlaid onto the 8 μm image of the SMC. For
+clarity, only a third of the early- and late-B stars are shown; these
+are equally distributed along the SMC bar and wing. Other types
+are concentrated along the bar, partly due to the fact that most
+spectroscopic surveys have targeted the bar. The 8 μm emission,
+which maps the surface density of the interstellar medium, is
+stronger in the SMC bar than the wing, since the former contains
+more star-forming regions.
+
+3. INFRARED COLOR–MAGNITUDE AND TWO-COLOR
+DIAGRAMS
+
+We divide the matched stars into 10 categories accord-
+types: O stars, early (B0−B2.5) and
+ing to their spectral
+late (B3−B9) B stars (the majority of these have super-
+giant or giant luminosity classiﬁcations), spectral-type A-, F-,
+and G-type (AFG) supergiants, K and M red supergiants
+(RSGs), W-R stars, supergiant B[e] (sgB[e]) stars, conﬁrmed
+LBVs, Be/X-ray binaries and stars with composite features
+
+of both A and F stars (AFcomp; Evans et al. 2004a, see also
+Section 4.4). Note that 813 stars not included in any of the
+above categories are classiﬁed as “other” (and only shown in
+certain plots).20 Most are A stars with luminosity class II or
+F/G stars without a luminosity classiﬁcation from Evans et al.
+(2004a), although with vradial > 100 km s−1. To allow for a
+direct comparison with the LMC results of Paper I, we present
+the same color–magnitude and two-color diagrams (CMDs and
+TCDs), identifying stars in the 10 categories described above.21
+Infrared [3.6] versus [3.6] − [4.5] and J − [3.6] CMDs
+for all
+the stars in the catalog are shown in Figures 2
+and 3. The locations of all the SAGE-SMC catalog detections
+are represented by the gray two-dimensional histogram (Hess
+diagram). The red giants form the clump at [3.6] > 15 mag,
+while the vertical blue extension contains late-type SMC and
+foreground stars (free–free emission causes the OB stars to have
+redder colors). The asymptotic giant branch stars are located at
+[3.6] ∼ 11 mag and J − [3.6] ∼ 2 mag. The RSGs, sgB[e],
+and LBVs are among the brightest stars at 3.6 μm and occupy
+distinct regions in the diagrams (as in the LMC). Most of the O
+and B stars are located along a vertical line at [3.6] − [4.5] ∼ 0,
+as expected. The RSGs have “blue” colors because of the de-
+pression at [4.5] due to the CO band (see, e.g., Verhoelst et al.
+2009). The sgB[e] stars are 0.6–0.8 mag redder and can have
+similar brightnesses to the RSGs. The late-B stars are brighter
+than the early-B stars because most of the former are lumi-
+nous supergiants. A reddening vector for E(B − V ) = 0.2 mag
+(corresponding to some of the largest values for color excess
+found by Massey et al. 1995; Larsen et al. 2000) is shown in
+Figure 3 to illustrate the small effect of reddening, which de-
+creases at longer wavelengths. We note that the reddest of
+the bright AFG supergiants is the F0I eclipsing binary R47
+(Prieto et al. 2008). In Figure 3, we ﬁnd three early-B-type stars
+with colors similar to the sgB[e] stars, although they are fainter
+at [3.6]. In order of increasing J − [3.6] color, these stars are
+2dFS0402, 2dFS2411, and 2dFS2673 (all classiﬁed as B0-5V).
+Their evolutionary status is not clear though they are worthy of
+
+20 Note that ﬁve Bextr, ﬁve Be, one Be(Fe ii), one Bpec, and one A7-F5e star
+are found among these.
+21 The conversion to absolute magnitudes in all CMDs is based on a true SMC
+distance modulus of 18.91 mag (Hilditch et al. 2005).
+
+420
+
+BONANOS ET AL.
+
+Vol. 140
+
+SAGE SMC
+I8  um
+
+O
+
+early B
+
+late B
+
+AFG I
+
+RSG
+
+WR
+
+sgB[e]
+
+LBV
+
+Be/Xray
+
+AF comp
+
+)
+0
+0
+0
+2
+J
+(
+c
+e
+D
+
+-70.0
+
+-71.0
+
+-72.0
+
+-73.0
+
+-74.0
+
+-75.0
+
+40.0
+
+0.03
+
+0.02
+
+0.01
+
+RA (J2000)
+
+Figure 1. Spatial distribution of massive stars with IRAC counterparts, overplotted onto the 8 μm SAGE image (R.A. and decl. are given in degrees). Different symbols
+denote different spectral types. For clarity, only a third of the early- and late-B stars are shown; these are equally distributed along the SMC bar and wing. Other types
+are concentrated along the bar, due to the fact that most spectroscopic surveys have targeted the bar.
+(A color version of this ﬁgure is available in the online journal.)
+
+Figure 2. [3.6] vs. [3.6] − [4.5] color–magnitude diagram for massive stars
+with IRAC counterparts in the SAGE database. The conversion to absolute
+magnitudes is based on a true SMC distance modulus of 18.91 mag (Hilditch
+et al. 2005). Different symbols denote different spectral types. The locations
+of all the SAGE detections are shown in gray as a Hess diagram. The RSGs,
+sgB[e], and LBVs are among the most luminous stars at 3.6 μm.
+(A color version of this ﬁgure is available in the online journal.)
+
+future study (see discussion in Section 4.5). A comparison with
+the LMC CMDs reveals that sgB[e] stars are on average less
+luminous, while the RSGs are less dusty (see Section 5).
+
+Figure 3. Same as Figure 2, but for the [3.6] vs. J − [3.6] color–magnitude
+diagram. The reddening vector for E(B − V ) = 0.2 mag is shown. The longer
+baseline separates the populations more clearly.
+(A color version of this ﬁgure is available in the online journal.)
+
+In Figures 4 and 5, we present [8.0] and [24] versus
+[8.0] − [24] CMDs, respectively. At these wavelengths, only
+stars with strong [24] emission are detected, as the sensitivity
+of Spitzer drops sharply, while the ﬂux from hot stellar photo-
+spheres also decreases. Stars without cool dust are located at
+
+ 
+No. 2, 2010
+
+SPITZER SAGE-SMC INFRARED PHOTOMETRY OF MASSIVE STARS IN SMC
+
+421
+
+Figure 4. [8.0] vs. [8.0]−[24] color–magnitude diagram, with SAGE detections
+shown as gray points. The RSGs, sgB[e], and LBVs are also among the most
+luminous stars at 8 μm. The names and classiﬁcations of stars labeled as “other”
+are (in order of increasing [8.0] mag): 2dFS0712 (G8), 2dFS3528 (F0), and
+2dFS1829 (G2).
+(A color version of this ﬁgure is available in the online journal.)
+
+Figure 5. Same as Figure 4, but for the [24] vs. [8.0] − [24] color–magnitude
+diagram. The brightest sgB[e], RSGs, and LBVs are among the most luminous
+stars at 24 μm. The names and classiﬁcations of stars labeled as “other” are (in
+order of increasing [24] mag): 2dFS3528 (F0), 2dFS0712 (G8), and 2dFS1829
+(G2).
+(A color version of this ﬁgure is available in the online journal.)
+
+[8.0] − [24] ∼ 0, while dusty stars (including RSGs, LBVs,
+sgB[e] stars) are reddened. The faint population of sources with
+[8.0] − [24] ∼ 3.5 mag corresponds to background galaxies.
+We detect dusty LBVs, sgB[e], RSGs, yellow supergiants, and
+some dusty early-B stars in these CMDs. The detection of the
+following stars—labeled as “other”—at [24] (in order of in-
+creasing magnitude at [24]): 2dFS352822 (F0), 2dFS0712 (G8),
+and 2dFS1829 (G2), provides further evidence for their super-
+giant luminosity class and thus membership to the SMC. The
+early-B-type stars appearing in these diagrams, in order of in-
+creasing magnitude at [24] are as follows: 2dFS0402, 2dFS2673
+(both of type B0-5V; discussed above), AzV 9 (B0III), AzV 201
+(B1(Be-Fe)), AzV 409 (or 2dFS2201; B0.5Ib), AzV 230 (B0Ib),
+and AzV 390 (B2Iab:). Of these, both AzV 409 and AzV 230
+have spectral energy distributions (SEDs) with disk-like char-
+acteristics in all Spitzer passbands (i.e., similar to the Be star
+SEDs shown in Paper I, Figure 17), although the former has a
+slight upturn at [24]. The nature of these objects is discussed in
+Section 4.5. Finally, the late-B and AFG supergiants present in
+these diagrams are hypergiants whose spectra and SEDs indi-
+cate the presence of substantial stellar winds. A comparison of
+the colors of various types of massive stars in the LMC versus
+SMC CMDs reveals that the colors of the RSGs differ the most
+(see Section 4.5.3).
+
+In Figures 6–8, we present TCDs using the near- and mid-
+infrared photometry from our matched catalog. We label stars
+according to their spectral types and overplot all the SAGE-
+SMC detections in gray as Hess diagrams. Stars without dust
+have mid-infrared colors near 0. Late-type stars can have J −Ks
+excesses of (cid:3)2 mag, while the group of stars with colors
+Ks − [8.0] ∼ 3, [4.5] − [8.0] ∼ 2, and [8.0] − [24] ∼ 3.5 mag
+correspond to young stellar objects and background galaxies.
+We have overplotted six simple theoretical models to guide the
+
+22 2dFS3528 is discussed further in Section 4.5.2.
+
+interpretation of the stars in these diagrams, which are described
+in detail in Paper I: (1) a blackbody (BB) at various temperatures,
+(2) a power-law model Fν ∝ να, for −1.5 (cid:3) α (cid:3) 2, (3) an OB
+star (represented by a 30,000 K BB) plus an ionized wind, (4)
+an OB star plus emission from an optically thin H ii region,
+(5) an OB star plus 140 K dust, (6) a 3500 K BB plus 250 K
+dust. The most conspicuous stars in all TCDs are the sgB[e]
+stars, which have large excesses of ∼4 mag in the K − [8.0]
+color, similar to the sgB[e] stars in the LMC. R4, a B0[e]-type
+LBV, has mid-infrared colors intermediate between sgB[e] and
+Be stars. We ﬁnd a remarkable bimodal distribution of the OB
+stars, most clearly seen in Figure 6, with the redder grouping
+corresponding to Oe and Be stars (see Section 4.1 for more
+details). Among these outliers are the Be/X-ray binaries and
+other emission line stars, including some yellow supergiants.
+The near-infrared excesses found among the sgB[e] and W-R
+stars are on average lower than in the LMC, presumably due to
+the lower metallicity of the SMC. Finally, the RSGs, in contrast
+to their distribution in the LMC TCDs, are found to be clustered,
+due to the lower dust production rates at the metallicity of the
+SMC (see Section 5).
+
+4. INFRARED EXCESSES OF MASSIVE STARS IN THE
+SMC VERSUS THE LMC
+
+In this section, we study the infrared excesses of speciﬁc
+spectral types of massive stars, comparing them with the infrared
+excesses found in Paper I for the same types of stars in the LMC.
+
+4.1. O/Oe and Early-B/Be Stars
+In Figures 9 and 10, we plot JIRSF versus JIRSF − [3.6],
+JIRSF − [5.8], and JIRSF − [8.0] colors for the 208 O and
+1967 early-B stars in our catalog, respectively, denoting their
+luminosity classes, binarity, and emission line classiﬁcation
+properties by different symbols. We compare the observed
+
+422
+
+BONANOS ET AL.
+
+Vol. 140
+
+Figure 6. J − Ks vs. Ks − [8.0] diagram for massive stars in our catalog. The
+locations of all the SAGE detections are shown in gray as a Hess diagram.
+The solid lines represent models (described in Section 3): (1) a BB at various
+temperatures, as labeled, (2) a power-law model Fν ∝ να, for −1.5 (cid:2) α (cid:2) 2,
+(3) an OB star plus an ionized wind, (4) an OB star plus emission from an
+optically thin H ii region, (5) an OB star plus 140 K dust, (6) 3500 K BB plus
+250 K dust (dashed line). The sgB[e], RSGs, and the clump of “red” early-B
+stars that correspond to Be stars occupy distinct regions on this diagram.
+(A color version of this ﬁgure is available in the online journal.)
+
+Figure 8. Same as Figure 6, but for the [3.6] − [8.0] vs. [8.0] − [24] diagram.
+The more uniform distribution of RSGs, as compared to the LMC, is due to the
+lower dust content.
+(A color version of this ﬁgure is available in the online journal.)
+
+Figure 7. Same as Figure 6, but for the [3.6] − [4.5] vs. [4.5] − [8.0] diagram.
+The majority of hot massive stars lie between the BB and OB star +wind model,
+illustrating that a BB is a good approximation in the infrared.
+(A color version of this ﬁgure is available in the online journal.)
+
+Figure 9. Infrared excesses (JIRSF vs. JIRSF − [3.6], JIRSF − [5.8] and
+JIRSF − [8.0]) for 208 O stars. Supergiants are shown in yellow, giants in green,
+main-sequence stars in blue, stars with uncertain classiﬁcations (“other”) in red,
+binaries with a large circle, and Oe stars with an ×. The solid lines correspond
+to 30 kK and 50 kK TLUSTY models with log g = 4.0. A reddening vector
+for E(B − V ) = 0.2 mag is shown, as well as reddened TLUSTY models by
+this same amount (dotted lines). The more luminous stars exhibit larger infrared
+excesses, which increase with λ.
+(A color version of this ﬁgure is available in the online journal.)
+
+colors with colors of plane–parallel non-LTE TLUSTY stellar
+atmosphere models (Lanz & Hubeny 2003, 2007) of appropriate
+metallicity and effective temperatures. For reference, reddening
+vectors and TLUSTY models reddened by E(B −V ) = 0.2 mag
+infrared excesses from
+are also shown. We clearly detect
+free–free emission despite not having dereddened the stars, as in
+the LMC. At longer wavelengths, the excess is larger because the
+ﬂux due to free–free emission for optically thin winds remains
+essentially constant with wavelength. Fewer stars are detected
+at longer wavelengths because of the decreasing sensitivity of
+Spitzer and the overall decline of their SEDs. We ﬁnd that
+the majority of early-B supergiants in the SMC exhibit lower
+infrared excesses, when compared to their counterparts in the
+LMC (see Paper I), due to their lower mass-loss rates, although
+certain exceptions exist and deserve further study.
+
+The CMDs allow us to study the frequency of Oe and Be
+stars, given the low foreground and internal reddening for the
+SMC. Our SMC catalog contains four Oe stars among 208
+O stars (see Figure 9), of which one is bluer than the rest.
+There are 16 additional stars with JIRSF − [3.6] > 0.5 mag
+and JIRSF < 15 mag (including all luminosity classes), whose
+spectra appear normal (although the Hα spectral region in most
+cases was not observed). We refer to these as “photometric
+Oe” stars and attribute their infrared excesses to free–free
+emission from a short-lived, possibly recurrent circumstellar
+region, whose Hα emission line was not detected during the
+spectroscopic observations either because the gas had dispersed
+or because the region was optically thick to Hα radiation or
+the observation spectral range just did not extend to Hα. Given
+˙M at SMC metallicity, we argue that
+the expectation of lower
+
+No. 2, 2010
+
+SPITZER SAGE-SMC INFRARED PHOTOMETRY OF MASSIVE STARS IN SMC
+
+423
+
+Table 5
+Oe and Be Star Fractions
+
+Fraction
+
+Oe/O
+(Oe+“phot Oe”)/O
+Be/early-B
+(Be+“phot Be”)/early-B
+
+LMC
+1% ± 0.6%
+5% ± 1%
+4% ± 1%
+16% ± 2%
+
+SMC
+2% ± 1%
+10% ± 2%
+19% ± 1%
+27% ± 2%
+
+excesses. Including these “photometric Be” stars and using the
+same color and magnitude cuts as for the “photometric Oe”
+stars above, yields fractions of Be stars among early-B stars
+of 27% ± 2% for the SMC and 16% ± 2% for the LMC (cf.
+32% from young SMC clusters; Wisniewski & Bjorkman 2006).
+Table 5 summarizes these results. We compare our results with
+the fractions determined by Maeder et al. (1999) from young
+clusters, i.e., 39% for the SMC and 23% for the LMC, ﬁnding
+ours to be lower, although the sample selections were very
+different.
+
+These preliminary statistics (available for the ﬁrst time for
+Oe stars) indicate that both Oe and Be stars are twice as
+common in the SMC than in the LMC. We emphasize the
+importance of including the “photometric Be” stars, which
+signiﬁcantly increase the frequencies of Oe/O and Be/early-
+B stars determined and are crucial when comparing such stars
+in different galaxies. This novel method of conﬁrming Oe and
+Be star candidates from their infrared colors or a combination
+of their optical and infrared colors, as recently suggested by Ita
+et al. (2010a) is complementary to the detailed spectroscopic
+analyses by e.g., Negueruela et al. (2004) on individual Oe stars
+to understand their nature, although it is limited to galaxies with
+low internal reddening. We ﬁnally note that the spectral types of
+Oe stars in the SMC (O7.5Ve, O7Ve, O4-7Ve, and O9-B0III-Ve)
+and the LMC (O9Ve (Fe ii), O7:Ve, O8-9IIIne, O3e) are earlier
+than those of known Galactic Oe stars, which are all found in
+the O9-B0 range (Negueruela et al. 2004).
+
+To illustrate the double sequence more clearly, we present the
+same information in a histogram in Figure 11 for the early-B
+stars in both the LMC (from Paper I) and SMC, divided into
+magnitude bins. For stars with JIRSF − [3.6] ∼ 0, we ﬁnd the
+brighter, more luminous stars to be redder (cf. top three panels of
+Figure 11), as in Paper I. In the second and third panels, the mean
+values of the JIRSF − [3.6] colors for the (blue, red) peaks are:
+(−0.07, 0.74) and (−0.09, 0.71) mag for the SMC and (−0.01,
+0.66) and (−0.06, 0.79) mag for the LMC. The blue peak for the
+SMC stars is thus bluer than for the LMC, which is primarily
+due to the higher foreground reddening toward the LMC. In the
+second panel, we ﬁnd the separation between peaks to be larger
+for the SMC (0.81 mag) than the LMC (0.67 mag), implying
+that the SMC Be stars have larger infrared excesses than their
+LMC counterparts. Unfortunately, in the third panel, the red
+peak of the LMC stars is barely discernible, therefore we cannot
+conﬁrm this difference. We also ran a Kolmogorov–Smirnov test
+to check whether the stars are drawn from the same population
+(assuming the sample is unbiased). This yielded a probability
+of 5.0 × 10−3 (for the stars in the second row) and 5.7 × 10−5
+(third row), implying that the underlying populations are indeed
+different.
+
+Finally, we note that the brightest Be stars in the SMC
+(JIRSF ∼ 13.2 mag) are brighter than the brightest Be stars in the
+LMC (JIRSF ∼ 13.4 mag), i.e., there is a 0.7 mag difference in
+absolute magnitude, given the 0.5 mag difference in the distance
+moduli. Garmany & Humphreys (1985) were the ﬁrst to make
+
+Figure 10. Same as Figure 9, but for 1967 early-B stars. The solid lines
+correspond to 20 kK, log g = 3.0 and 30 kK, log g = 4.0 TLUSTY models. A
+reddening vector for E(B − V ) = 0.2 mag is shown, as well as reddened
+TLUSTY models by this same amount (dotted lines). The distinct redder
+sequence, corresponding to the Be stars, implies the possibility of identifying
+or conﬁrming Be stars photometrically.
+(A color version of this ﬁgure is available in the online journal.)
+
+such a region is more likely to be a transient disk rather than
+a wind. Assuming these are all Oe stars, we ﬁnd a 10% ± 2%
+fraction of Oe stars among the O stars in the SMC. The error
+in the fraction is dominated by small number statistics. In
+contrast, there are four Oe and 14 “photometric Oe” stars (with
+JIRSF − [3.6] > 0.5 mag and JIRSF < 14.5 mag) out of 354 O
+˙M at LMC metallicity),
+stars in the LMC (despite the higher
+which yields a 5% ± 1% fraction of Oe stars among O stars in
+the LMC.
+
+Turning to the early-B stars, the most striking feature in
+Figure 10 is a distinct sequence displaced by ∼0.8 mag to
+the red. A large fraction of the stars falling on this redder
+sequence have Be star classiﬁcations, although not all Be stars
+reside there. Given that the circumstellar gas disks responsible
+for the emission in Be stars are known to completely vanish
+and reappear between spectra taken even one year apart (see
+review by Porter & Rivinius 2003, and references therein), the
+double sequence reported here provides further evidence for the
+transient nature of the Be phenomenon. A bimodal distribution at
+the L band was previously suggested by the study of Dougherty
+et al. (1994), which included a sample of 144 Galactic Be
+stars. Our larger Be sample, which is essentially unaffected by
+reddening, and the inclusion of all early-B stars, clearly conﬁrms
+the bimodal distribution. It is due to the much larger number of
+Be stars classiﬁed in the SMC, in comparison to the LMC, as
+well as the higher fraction of Be stars among early-B stars in the
+SMC, which is 19% ± 1% versus 4% ± 1% in the LMC when
+considering only the spectroscopically conﬁrmed Be stars (cf.
+∼17% for <10 Myr B0–5 stars; Wisniewski & Bjorkman 2006).
+Excluding the targeted sample of Martayan et al. (2007a, 2007b)
+does not signiﬁcantly bias the statistics, since the fraction only
+decreases to 15 ± 1%. We caution that incompleteness in our
+catalogs could also affect the determined fractions, if our sample
+turns out not to be representative of the whole population of OB
+stars.
+
+We proceed to deﬁne “photometric Be” stars as early-B-type
+stars with an intrinsic color JIRSF − [3.6] > 0.5 mag, given that
+a circumstellar disk or envelope is required to explain such large
+
+424
+
+BONANOS ET AL.
+
+Vol. 140
+
+AzV 229 WN6h; LBV binary) is labeled as an LBV in all
+diagrams and is the only W-R star with a detection at [24].
+We compare the colors of the W-R stars to those of their LMC
+counterparts (see Paper I) and ﬁnd that their infrared excesses
+are much lower, possibly indicating that their winds are much
+weaker than those of LMC W-R stars. Speciﬁcally, we ﬁnd the
+SMC W-R stars to have “bluer” colors: −0.2 < J − [3.6] < 0.5
+(versus 0.2–1.7 for the LMC sample), −0.2 < J − Ks < 0.1
+(versus 0–0.6), 0.4 < Ks − [8.0] < 1.2 mag (versus 0.4–1.8).
+The origin of the hydrogen absorption lines seen in 10 of the
+12 W-R stars (classiﬁed as “WN+abs” or “WNha”) remains
+unclear, since radial velocity surveys have only conﬁrmed four
+as binary systems (Foellmi et al. 2003). The absorption in the
+other stars could alternatively be explained as photospheric
+absorption (due to weak winds; Massey et al. 2003). The infrared
+photometry made available for the W-R stars in this paper, will
+enable modeling of their SEDs to determine the properties of
+their stellar winds and perhaps the origin of the absorption lines.
+
+4.4. AF Composite Stars
+
+Evans et al. (2004a) discovered a class of objects with pecu-
+liar composite spectra (AF composites or AFcomp), which yield
+an A-type classiﬁcation from their Ca ii K lines, but an F-type
+classiﬁcation from other metal lines and the G band. For exam-
+ple, the classiﬁcation AFA3kF8 denotes such an AF composite
+star, with Ca ii K like A3 and G band like F8. Our photometric
+catalog contains 16 out of the 20 AF composite stars from the
+2dF Survey of Evans et al. (2004a). The AF composite stars
+that additionally exhibit forbidden emission lines (2dFS1804;
+AFA3kF0/B[e] and 2dFS2837; AFA5kF0/B[e]) are labeled and
+henceforth treated as sgB[e] stars.
+
+The infrared colors of the AF composite stars provide further
+clues to their nature and conﬁrm their astrophysical peculiarity.
+In Figure 2, their [3.6] − [4.5] colors are indistinguishable from
+AFG supergiants,24 while in Figure 3 they clearly have red
+colors, with 0.5 < J −[3.6] < 1 mag. None are detected at [24].
+In Figure 6, all four AF composite stars with [8.0] detections
+show near-infrared colors in the range 0.3 < J − Ks < 0.9
+mag; thus, intermediate between blue and red supergiants,
+possibly indicating these stars are on blue loops or in interacting
+binaries. The SEDs indeed are quite “ﬂat;” thus, not consistent
+with normal single stars, while the multiple V I and JHKs
+measurements reveal variability for several sources, which in
+some cases can be conﬁrmed by light curves available from the
+OGLE database (Udalski et al. 1997; Szyma´nski 2005). We note
+that 2dFS2945 (HV 11519) is a known δ Cep pulsator.
+
+4.5. Dusty Stars
+
+Our catalog includes 166 stars with detections at [24], which
+indicate the presence of dust. Of these, 97 are RSGs, ﬁve
+sgB[e], and three LBV stars, all exhibiting dust, as expected.
+Luminous supergiants with strong winds or disk-like SEDs
+also exhibit infrared excess at [24] and [8.0] and therefore
+appear in Figures 4 and 5. There are four B0-5 V type stars:
+2dFS0402, 2dFS2411, 2dFS2673, and 2dFS3701 that have very
+ﬂat SEDs. Additionally, we ﬁnd a class of 44 dusty OB stars
+(16 late-O and 28 early-B stars, making up 2% of our sample),
+with similar characteristics to the peculiar population of dusty
+OB stars reported by Bolatto et al. (2007, 190 O9-B3 stars,
+corresponding to 5% of their sample) in their S3MC survey and
+
+Figure 11. Histograms of the JIRSF − [3.6] colors of 1967 early-B stars in the
+SMC (left) and 586 in the LMC (from Paper I, right), divided into magnitude
+ranges. The main peaks of the histograms shift to redder colors for brighter
+stars. The redder secondary peaks correspond to the Be stars, which are more
+numerous in the SMC.
+
+such a comparison, ﬁnding the Be stars in the Magellanic Clouds
+to be up to 1 mag brighter when compared to Galactic Be
+stars, although their observation could be due to a selection
+effect, related to the selection of ﬁeld versus cluster Be stars.
+Even though our sample is not dominated by such selection
+effects, we also ﬁnd the brightest Be stars in the SMC to be
+intrinsically more luminous than their LMC counterparts. Given
+that winds are weaker at low metallicity, it is possible that there is
+a mechanism that allows disks to form at higher luminosities.23
+Such a possibility would have interesting implications when
+extrapolating to even lower metallicities (see, e.g., Ekstr¨om et al.
+2008).
+
+4.2. Be/X-ray Binaries
+
+Dray (2006) found that both metallicity and a star formation
+burst must be invoked to explain the large number of high-mass
+X-ray binaries in the SMC, and consequently the large number
+of Be/X-ray binaries. Of the 69 Be/X-ray binaries in our SMC
+photometric catalog, 21 (or 30% ± 8%) were matched in the
+SAGE-SMC database (versus four matches out of 20 Be/X-ray
+binaries or 20% ± 11% in the LMC). Interestingly, some SMC
+Be/X-ray binaries are brighter than their LMC counterparts,
+despite being farther away, in agreement with the ﬁnding that Be
+stars in the SMC occur at higher luminosity. A comparison with
+the infrared colors of the Be/X-ray binaries in the LMC does not
+reveal any differences. The SEDs of the SMC Be/X-ray binaries
+show excess due to the disks around the Be stars, as in the
+LMC. Finally, the multiple V I and JHKs measurements reveal
+variability for many systems, which deserves further study.
+
+4.3. Wolf–Rayet Stars
+
+Of the 12 W-R stars in our spectral-type catalog, 10 were
+matched in the SAGE-SMC database. HD 5980 (SMC-WR5;
+
+23 This would also explain the larger infrared excesses found in Be stars in the
+SMC, described in the previous paragraph.
+
+24 The brightest AF composite star at [3.6] is 2dFS5049.
+
+No. 2, 2010
+
+SPITZER SAGE-SMC INFRARED PHOTOMETRY OF MASSIVE STARS IN SMC
+
+425
+
+Figure 12. SEDs of OB stars with [24] detections, normalized by their J-band
+ﬂuxes (dashed line) and offset for display purposes. Normalized TLUSTY model
+atmospheres at SMC metallicity (30 kK, log g = 3.00 for the main-sequence
+stars; 20 kK, log g = 2.25 for the two supergiants) are overplotted as solid lines
+for comparison. The MCPS, IRSF, and SAGE measurements (ﬁlled circles)
+and the 2MASS and OGLE measurements (open circles) are also connected
+by a solid line. The dotted curves correspond to TLUSTY models reddened
+by E(B − V ) = 0.25 and 0.50 mag. Several classes of object are represented
+(see Section 4.5). 2dFS1172 and 2dFS1192 are examples of dusty OB stars.
+Variability is present in several sources; however, in the case of 2dFS0402 it is
+likely due to a mismatch with a close infrared source.
+
+recently conﬁrmed by Ita et al. (2010b) with data from AKARI.
+Hereafter, we refer to these stars as “dusty OB stars.” They are
+characterized by a photospheric SED out to [5.8] and strong
+[24] excess, which cannot be attributed to free–free emission.
+Most have main-sequence luminosity classes, although there are
+a few giants and supergiants. In Figure 12, we plot SEDs for the
+four stars with unusually ﬂat or rising SEDs, two representative
+examples from among the 44 “dusty OB stars” (2dFS1172,
+2dFS1192) and two examples of luminous supergiants with
+infrared excess due to strong winds or disks (AzV 230, AzV 409;
+2dFS2201). For completeness, in Figure 13, we show two
+examples of late-B supergiants with [24] detections and the
+ﬁve AFG supergiants that have [24] detections. Note, the F0
+supergiants R47 (a rare eclipsing binary; Prieto et al. 2008)
+and 2dFS3528 (an LBV candidate, see Section 4.5.2) are of
+particular interest.
+
+The dust detected in the class of “dusty OB stars” could either
+be directly related to the OB stars or simply be contamination
+given the volume of the SMC sampled with the 6(cid:6)(cid:6) resolution of
+MIPS. While inspection of their environments shows that they
+are located in or near young associations, they are frequently not
+
+Figure 13. SEDs of two late-B supergiants and of the ﬁve AFG supergiants
+detected at [24], normalized by their J-band ﬂuxes (dashed line) and offset
+for display purposes, as in Figure 12. The SED of the F supergiant 2dFS3528
+most resembles that of R4 (AzV 16, B0[e]LBV); we suggest it to be an LBV
+candidate.
+
+the youngest objects (earliest types), e.g., NGC 330 has three
+“dusty OB stars” nearby and a turn-off of around B2 (Lennon
+et al. 1993). We examined the spectra for 18 of these sources (12
+from the 2dF Survey and six from the VLT-FLAMES Survey;
+Evans et al. 2006), which all exhibit sharp nebular-like Balmer
+emission lines; for those with red-optical spectra, seven also
+have Hα nebular emission and three have weak [N ii] and [S ii]
+lines, indicating the presence of a faint H ii region. Many sources
+for which we do not have spectra available are either listed in Hα
+emission line catalogs or lie in regions of faint nebulosity. Given
+that most “dusty OB stars” are not found within very young
+regions, we suggest that these sources represent unrelated cirrus
+hot spots or cases where hot stars are ionizing nearby dusty
+molecular clouds (rather than young stellar objects) producing
+both the nebular emission lines and emission from warm dust
+(as in Cepheus B, see e.g., Panagia & Thum 1981).
+
+4.5.1. Supergiant B[e] Stars
+
+In the SMC photometric catalog, we have detected seven
+luminous sources with colors typical of sgB[e] stars (see Paper
+I for an introduction), i.e., M3.6 < −8, [3.6] − [4.5] > 0.7,
+and J − [3.6] > 2 mag (see Figures 2 and 3). Five of
+these are previously known sgB[e] stars (with R50; B2-3[e]
+being the brightest in all IRAC and MIPS bands), while R4
+(AzV 16) is classiﬁed as an LBV with a sgB[e] spectral type. In
+
+426
+
+BONANOS ET AL.
+
+Vol. 140
+
+to differ, given their very different spectral types. Moreover, we
+ﬁnd evidence for variability, which can be conﬁrmed from ex-
+isting light curves in the All Sky Automated Survey (ASAS;
+Pojma´nski 2002), as pointed out by Szczygiel et al. (2010), who
+studied the variability of the massive stars presented in Paper I in
+the LMC. The various SED shapes and spectral types observed
+depend on the time since the last outburst event and the amount
+of dust formed.
+
+Finally, we note that the F0 star, 2dFS3528 (Sk166) also lies
+among the sgB[e] stars in Figures 4, 5, and 8 and near R4
+(AzV 16; B0[e]LBV) in the other CMDs and TCDs, because it
+has a similar SED (cf. Figures 13 and 14). Although Sanduleak
+originally classiﬁed this star as “OB:,” its 2dF spectrum is clearly
+F-type, but with strong Hα emission having broad wings, which
+indicate a wind. Osmer (1973) designated it as a nonmember
+based on its optical colors. It is included in the catalog of Massey
+(2002)25 and indeed has some colors that are too blue, while
+others are too red for its spectral type. However, the radial
+velocity measured by Evans & Howarth (2008, +137±8 km s−1)
+ﬁrmly places it in the SMC. The SED of 2dFS3528 is distinctly
+sgB[e]-like and most similar to that of R4. All the above
+characteristics, along with the variability detected in the near-
+infrared, make this star an LBV candidate. Further monitoring
+is highly desirable to conﬁrm its LBV nature.
+
+4.5.3. Red Supergiants
+
+The RSGs are among the brightest mid-infrared sources
+in the SMC, with absolute magnitudes reaching −12 mag at
+[3.6], and −13 mag at [8.0] and [24]. However, in the LMC,
+some RSGs occur at higher [24] luminosities. SMC_018592
+(K0-2I) is the brightest RSG at [3.6], [8.0], and [24] (see
+Figures 2, 4, 5). In Figure 3, the following three RSGs have
+“bluer” colors than the rest (in order of increasing [3.6]
+magnitude): SMC_030135 (K2I), SMC_035231 (K2I), and
+SMC_049990; 2dFS1517. The latter has two classiﬁcations:
+K5I by Massey & Olsen (2003) and G2 by Evans et al. (2004a),
+making it a variable candidate (also given its radial velocity:
++143 ± 5 km s−1; Evans & Howarth 2008). In Figure 6,
+SMC_035231 (K2I) is the outlier at (0.4, 0.6), making it a
+possible foreground dwarf; while SMC_058738 (K2I) is the
+outlier at (1.0, 0.5). We note that SMC_055188 (M3-M4I) and
+SMC_046662 (M0I) were reported by Levesque et al. (2007)
+to have variable spectral types; they are included in our catalog
+and are among the more reddened RSGs.
+
+A comparison of the SMC CMDs and TCDs to the corre-
+sponding ones of the LMC from Paper I reveals that the distri-
+bution of RSG colors is quite different. The SMC RSGs have
+a dominant population of non-dusty RSGs and a population of
+dusty RSGs, with a distinct color distribution. In contrast, al-
+most all RSGs in the LMC are dusty to some degree, with a
+rather continuous distribution in color. This difference is due to
+the lower dust content (∝Z), which is not compensated for by
+the lower wind velocity (∝
+Z, see van Loon 2000, 2006; van
+Loon et al. 2008). Furthermore, since both the dust production
+rate (cf. Sloan et al. 2008) and the dust-to-gas ratio depend on
+Z (van Loon 2006), ˙M is independent of Z, though the wind ve-
+locities of RSGs depend on metallicity (see, e.g., Habing et al.
+1994; Marshall et al. 2004). While the optical and near-infrared
+colors of RSGs have long been known to display a Z depen-
+dence (cf. Arp 1959; Oestreicher et al. 1997), the systematics of
+
+√
+
+25 [M2002] 80339; V = 12.92, B − V = 0.15, U − B = −0.45, and
+V − R = 0.17 mag.
+
+Figure 14. SEDs of the LBVs and sgB[e], all detected at [24], normalized
+by their J-band ﬂuxes (dashed line) and offset for display purposes, as in
+Figure 12. TLUSTY model atmospheres are overplotted for comparison:
+15 kK, log g = 1.75 for the B8 and later types; 20 kK, log g = 2.25 for the
+earlier types. The last two SEDs with composite spectral types closely resemble
+the sgB[e] SEDs; note, these stars vary.
+
+addition to these, we ﬁnd that 2dFS1804 (AFA3kF0/B[e]) has
+a very similar SED (and therefore infrared colors) to the known
+sgB[e] 2dFS2837 (AFA5kF0/B[e]). Evans et al. (2004a) also
+remarked on the similarity of their spectra. We therefore conﬁrm
+the supergiant nature of 2dFS1804 and present its SED in
+Figure 14 along with those of other sgB[e] and LBV stars.
+We note that both are photometrically variable. The similarity
+of the SEDs of these sgB[e] stars, despite the various optical
+spectral classiﬁcations, implies that all are the same class of
+object. The cooler, composite spectral types indicate a lower
+mass and perhaps a transitional stage to or from the sgB[e]
+phenomenon. The only difference we ﬁnd between the sgB[e]
+stars in the SMC versus the LMC is that on average they are
+∼1–2 mag fainter (in absolute terms).
+
+4.5.2. Luminous Blue Variables
+
+All three known LBVs in the SMC: R4 (AzV 16, B0[e]LBV),
+R40 (AzV 415, A2Ia: LBV), and HD 5980 (WN6h;LBV bi-
+nary), were all detected at infrared wavelengths. In all CMDs
+and TCDs, R4 is the more reddened LBV. It occupies a loca-
+tion similar to other sgB[e] stars on the CMDs; however, in
+Figures 6 and 7 it lies between the sgB[e] and the Be stars,
+whereas the colors of HD 5980 (a well-known eccentric eclips-
+ing binary, see e.g., Foellmi et al. 2008) are similar to those of the
+LBVs in the LMC. We plot their SEDs in Figure 14 and ﬁnd them
+
+No. 2, 2010
+
+SPITZER SAGE-SMC INFRARED PHOTOMETRY OF MASSIVE STARS IN SMC
+
+427
+
+Figure 15. MKs vs. Ks − [24] CMD of our sample of RSGs in the SMC (ﬁlled
+circles; this work) and LMC (open circles; Paper I). The fainter SMC RSGs
+cluster around Ks − [24] = 0.35 (dotted line). A model from Groenewegen
+(2006) for a star with spectral type M0 and luminosity 85,000 L(cid:3) with increasing
+amounts of dust toward redder color is shown for reference. Most LMC stars
+and many SMC stars show clear excess emission due to dust, which is most
+pronounced at high luminosity.
+
+˙M as a function of Ks − [24] for two sets of models from
+Figure 16.
+Groenewegen (2006) with spectral types M0 (ﬁlled circles) and M6 (open
+circles). The solid line indicates the approximation described by the labeled
+equation, which is valid for a star of luminosity 3000 L(cid:3), wind speed
+10 km s−1 and dust-to-gas ratio 0.005, for the range 0.8 < Ks − [24] < 5 mag.
+We use scaling relations to apply it to the RSGs in the Magellanic Clouds.
+
+their mid-infrared colors have only been investigated for limited
+samples (e.g., Groenewegen et al. 2009).
+
+The true ˙M is obtained by applying scaling relations valid for
+
+dust-driven winds (cf. van Loon 2007):
+
+5. RED SUPERGIANT MASS-LOSS RATES
+
+˙M = ˙Mreference(v/10)(0.005/ψ)(L/3000)0.5,
+
+Our large samples of RSGs in the SMC and LMC lend
+themselves to a study of the Z dependence of the mass-loss
+rate. Figure 15 presents the MKs versus Ks − [24] CMD for
+both SMC and LMC RSGs (from Paper I), on which the RSGs
+are spread out as a result of various amounts of circumstellar
+dust. The fainter RSGs in the SMC concentrate around a vertical
+sequence at Ks − [24] ≈ 0.35 mag, but all other RSGs have
+signiﬁcantly redder Ks − [24] colors indicative of the emission
+from dust. A series of models for a star with spectral-type M0
+and luminosity 85,000 L(cid:3) (Groenewegen 2006) are plotted for
+reference, showing that the dust remains optically thin at near-
+infrared wavelengths for Ks − [24] < 5 mag.
+
+The Ks − [24] color is a good measure of the optical depth of
+the circumstellar dust envelope. We use the results from radiative
+transfer modeling presented in Groenewegen (2006) for a star of
+luminosity L = 3000 L(cid:3), wind speed v = 10 km s−1, dust-to-
+gas ratio ψ = 0.005, surrounded by silicate grains with a size of
+0.1 μm and a condensation temperature of 1000 K. The relation
+between this reference ˙M and Ks − [24] color is shown in
+Figure 16, for a star of spectral-type M0 (typical for the SMC
+stars) and again for a star of spectral-type M6 (at the cool
+extreme of the LMC stars in our sample). For colors Ks −[24] <
+0.8 mag, the relation is rather steep; given the inaccuracies in
+photometry and stellar parameters we will not assign mass-loss
+rates to these non-dusty stars. For colors 0.8 < Ks − [24] < 5
+mag, the relation is quite well approximated by the formula:
+log( ˙Mreference) = −8.6 + 0.5 × (Ks − [24]).
+The deviations from this formula are not (much) more than a
+factor of 2 for individual stars and will tend to average out when
+considering the sample as a whole.
+
+(1)
+
+(2)
+
+(3)
+
+where the wind speed scales as (e.g., Marshall et al. 2004)
+
+v = 10(ψ/0.005)0.5(L/3000)0.25.
+
+For the dust-to-gas ratio ψ, we adopt a value roughly in
+proportion to the metallicity of the stellar population, namely,
+ψ ≈ 0.001 for the SMC and ψ ≈ 0.002 for the LMC (cf. van
+Loon 2000, 2006). The luminosity is obtained by scaling the
+Ks-band magnitude of the model star from Groenewegen (2006);
+for the SMC stars we adopt Ks = 8.1 mag for the 3000 L(cid:3)
+star, at a reference distance of 8.5 kpc (this corresponds to a
+spectral-type M0) and Ks = 7.9 mag for the LMC stars (spectral
+type about M2). The distance modulus to the SMC is taken as
+18.91 mag and to the LMC as 18.41 mag (to be consistent with
+Paper I). The inaccuracies in the luminosities resulting from this
+approximation are of the order of 20%, which is small for our
+purposes.
+
+The estimated mass-loss rates show a clear positive correla-
+tion with luminosity (see Figure 17), conﬁrming previous results
+(van Loon et al. 1999, 2005; van Loon 2006; Groenewegen et al.
+2009) with a larger sample of stars. Apparently, the fainter RSGs
+are not very proﬁcient in their mass loss. However, these mass-
+loss rates were derived by assuming that dust condenses in these
+winds at the efﬁciencies expected from their metal content. This
+may not be true, particularly in the relatively warm atmospheres
+of early-M or late-K type stars, where the dust-to-gas ratio can
+be much less than assumed here (cf. van Loon et al. 2005). In-
+deed, at L < 9 × 104 L(cid:3) most of the RSGs in the SMC show
+very little evidence of dust at all, but they may still exhibit a
+purely gaseous wind. On the other hand, the values for the wind
+speed are estimated to be 9–12 km s−1 for the SMC sample
+
+428
+
+BONANOS ET AL.
+
+Vol. 140
+
+the SMC, whereas the warmer prescriptions better reproduce the
+luminous RSGs in the LMC. This is in conﬂict with the observed
+differences in temperature, with the SMC RSGs having earlier
+spectral types than their LMC counterparts.
+
+The SMC sample on the whole exhibits lower dusty mass-
+loss rates than the LMC sample (Figure 17), and RSGs in the
+SMC appear to contribute relatively more at higher luminosities
+(L > 9 × 104 L(cid:3)), while RSGs in the LMC also contribute
+noticeably at fainter luminosities. Both observations are likely
+related to the warmer atmospheres (earlier spectral types) of the
+SMC RSGs compared to those in the LMC. We thus conjecture
+that dusty mass loss plays a less important role in the SMC than
+in the LMC, while other forms of mass loss may instead be
+more important. For instance, as recently suggested (van Loon
+et al. 2010a), the warmer winds of metal-poor RSGs could
+be more susceptible to the coupling of Alfv´en waves, which
+could provide a driving mechanism in the absence of radiation
+pressure.
+
+We emphasize that our samples miss the dustiest RSGs, which
+are in brief episodes of very high mass loss; therefore, our results
+only apply to the optically bright RSG phase. A few such very
+dusty RSGs (known to exist in the Magellanic Clouds, e.g.,
+Wood et al. 1992; Groenewegen & Blommaert 1998; van Loon
+et al. 1999, 2010a, 2010b; Srinivasan et al. 2009) contribute
+more dust than the entire samples of optically bright RSGs
+considered here.
+
+6. SUMMARY
+
+This paper presents the ﬁrst catalogs of accurate spectral
+types and multi-wavelength photometry of massive stars in the
+SMC, which are used to study their infrared properties. The
+spectroscopic catalog contains 5324 massive stars, with accurate
+positions and spectral types compiled from the literature, and
+constitutes the largest such catalog currently available for any
+galaxy. The photometric catalog comprises uniform 0.3–24 μm
+photometry in the UBVIJHKs+IRAC+MIPS24 bands for a
+subset of 3654 stars that were matched in the SAGE-SMC
+database. The low foreground reddening toward the SMC,
+and the identical distance of the stars minimize systematic
+errors due to reddening and enable the investigation of infrared
+excesses. As in Paper I, we construct CMDs and TCDs,
+and discuss the position of O, early- and late-B stars, W-R,
+LBV, sgB[e], classical Be stars, RSGs, AFG supergiants, and
+Be/X-ray binaries on them. These diagrams are useful for
+interpreting infrared photometry of resolved massive stars in
+nearby galaxies at low metallicity.
+
+A comparison of the infrared colors of the massive stars in
+the SMC to those of their counterparts in the LMC (presented in
+Paper I) reveals differences that are due to the different evolution
+at SMC metallicity. The main results of our study concern the
+emission line Oe and Be stars, and the RSGs. We detected a clear
+bimodal distribution of early-B stars, with the redder sequence
+corresponding to classical Be stars and therefore propose that
+Be stars (and similarly Oe stars) can be easily discriminated
+photometrically, by their infrared colors. We ﬁnd the fraction of
+emission line stars in the SMC (10% ± 2% for Oe and 27% ±
+2% for Be) to be double that of the LMC (5% ± 1% for Oe
+and 16% ± 2% for Be), when including the “photometric” Oe
+and Be stars. This is the ﬁrst time the frequency of Oe stars
+is determined beyond the Galaxy and at subsolar metallicities.
+We also ﬁnd Be stars and Be/X-ray binaries to occur at higher
+luminosity, sgB[e] stars to be on average less luminous than
+their counterparts in the LMC (at [3.6]), and W-R stars to have
+
+˙M vs. luminosity L for our samples of RSGs in the SMC (ﬁlled
+Figure 17.
+circles; this work) and LMC (open circles; Paper I). No mass-loss rates could
+be determined for stars with Ks − [24] < 0.8 mag; these are shown in the
+bottom panel at their respective luminosities (crosses). Shown for reference are
+the nuclear burning rates for the triple-α process at work in helium burning in
+the cores of RSGs (dashed line), as well as the CNO cycle in hydrogen shell
+burning (dotted line) and the prescription of de Jager et al. (1988) for 3000,
+4000, and 5000 K (solid lines, labeled by the ﬁrst digit of the temperature).
+
+(12–19 km s−1 for the LMC sample). This is consistent with
+expectations for a ﬂuid in which the grains are well coupled
+to the gas and thus can transfer momentum from the radiation
+ﬁeld onto the bulk matter (cf. Marshall et al. 2004); much lower
+values could bring this assumption into question (cf. McDonald
+et al. 2009).
+
+The mass-loss rate is next compared to the rate at which
+matter is converted into energy in the central engine of the
+star, to assess whether much mass is lost before the star is taken
+elsewhere on its evolutionary path. In the context of core-helium
+burning RSGs, the most relevant process is the triple-α process,
+which has an efﬁciency η ≈ 5.9 × 1017 erg g−1 (Kippenhahn
+& Weigert 1990); we also compare to the CNO cycle, which
+governs hydrogen shell burning and has η ≈ 6.1 × 1018 erg g−1.
+The nuclear burning rate (in M(cid:3) yr−1) is then
+˙Mnuclear = 6.087 × 107(L/η).
+
+(4)
+
+We ﬁnd that essentially all RSGs in our samples lose mass
+through stellar winds at a signiﬁcantly lower rate than that at
+which helium is burned in their cores (Figure 17), often by
+an order of magnitude difference. This is in stark contrast to
+samples of RSGs that were selected from among the brightest
+mid-infrared sources; van Loon et al. (1999) showed that most
+of those RSGs have mass-loss rates similar to the nuclear
+burning rate, with a few extreme objects exceeding that rate by a
+signiﬁcant amount. The optically selected RSGs in the SMC and
+LMC are therefore found to be in a more stable phase of RSG
+evolution, in contrast to the RSGs selected as bright mid-infrared
+sources, which have a shorter lifetime. The prescriptions of de
+Jager et al. (1988) for 3000, 4000, and 5000 K coincide with
+the most luminous LMC RSGs, but are too high for the less
+luminous RSGs (in both galaxies). The 3000 K prescription of
+de Jager et al. (1988) better reproduces the luminous RSGs in
+
+No. 2, 2010
+
+SPITZER SAGE-SMC INFRARED PHOTOMETRY OF MASSIVE STARS IN SMC
+
+429
+
+smaller excess, all due to the different evolution at the lower
+metallicity of the SMC.
+
+The infrared colors of the RSGs in the SMC are found in
+most cases to be consistent with little dust, with only the most
+luminous sources showing excess emission presumably from
+circumstellar dust. This is in contrast to the generally dusty
+RSGs in the LMC and agrees with the expectation that the dust
+content in metal-poor RSGs is lower. We ﬁnd that the mass-loss
+rates in SMC RSGs correlate positively with luminosity, as in the
+LMC. Finally, we conﬁrm the astrophysical peculiarity of the
+composite A & F type spectra discovered by Evans et al. (2004a),
+the sgB[e] nature of 2dFS1804, and ﬁnd the F0 supergiant
+2dFS3528 to be an LBV candidate. This paper thus demonstrates
+the wealth of information contained in the SAGE-SMC survey
+and enables studies of the infrared properties of massive stars as
+a function of metallicity, in combination with the SAGE survey
+of the LMC. Studies of particular classes of massive stars and
+whole massive star populations in nearby galaxies, as outlined
+in Paper I, are obvious directions for follow-up.
+
+A.Z.B. acknowledges support from the Riccardo Giacconi
+Fellowship award of the Space Telescope Science Institute and
+from the European Commission Framework Program Seven un-
+der a Marie Curie International Reintegration Grant. The Spitzer
+SAGE-SMC project was supported by NASA grant NAG5-
+12595. This work is based (in part) on archival data obtained
+with the Spitzer Space Telescope, which is operated by the Jet
+Propulsion Laboratory, California Institute of Technology un-
+der a contract with NASA. Support for this work was provided
+by an award issued by JPL/Caltech. This publication makes
+use of data products from the 2MASS, which is a joint project
+of the University of Massachusetts and the Infrared Processing
+and Analysis Center/California Institute of Technology, funded
+by the National Aeronautics and Space Administration and the
+National Science Foundation.
+
+Facility: Spitzer (IRAC, MIPS)
+
+REFERENCES
+
+Antoniou, V., Hatzidimitriou, D., Zezas, A., & Reig, P. 2009, ApJ, 707, 1080
+Arp, B. H. 1959, AJ, 64, 254
+Azzopardi, M., & Vigneau, J. 1979, A&AS, 35, 353
+Azzopardi, M., & Vigneau, J. 1982, A&AS, 50, 291
+Azzopardi, M., Vigneau, J., & Macquet, M. 1975, A&AS, 22, 285
+Barb´a, R. H., et al. 1995, ApJ, 446, L23
+Bartzakos, P., Moffat, A. F. J., & Niemela, V. S. 2001, MNRAS, 324, 18
+Bolatto, A. D., et al. 2007, ApJ, 655, 212
+Bonanos, A. Z., et al. 2009, AJ, 138, 1003
+de Jager, C., Nieuwenhuijzen, H., & van der Hucht, K. A. 1988, A&AS, 72, 259
+Dougherty, S. M., et al. 1994, A&A, 290, 609
+Dray, L. M. 2006, MNRAS, 370, 2079
+Ekstr¨om, S., Meynet, G., Maeder, A., & Barblan, F. 2008, A&A, 478, 467
+Evans, C. J., & Howarth, I. D. 2008, MNRAS, 386, 826
+Evans, C. J., et al. 2004a, MNRAS, 353, 601
+Evans, C. J., et al. 2004b, ApJ, 607, 451
+Evans, C. J., et al. 2006, A&A, 456, 623
+Feast, M. W., Thackeray, A. D., & Wesselink, A. J. 1960, MNRAS, 121, 337
+Foellmi, C., et al. 2008, RevMexAA, 44, 3
+Foellmi, C., Moffat, A. F. J., & Guerrero, M. A. 2003, MNRAS, 338, 360
+Garmany, C. D., Conti, P. S., & Massey, P. 1987, AJ, 93, 1070
+Garmany, C. D., & Humphreys, R. M. 1985, AJ, 90, 2009
+Grebel, E. K., Richtler, T., & de Boer, K. S. 1992, A&A, 254, L5
+Groenewegen, M. A. T. 2006, A&A, 448, 181
+Groenewegen, M. A. T., & Blommaert, J. A. D. L. 1998, A&A, 332, 25
+Groenewegen, M. A. T., et al. 2009, A&A, 506, 1277
+Habing, H. J., Tignon, J., & Tielens, A. G. G. M. 1994, A&A, 286, 523
+Harries, T. J., Hilditch, R. W., & Howarth, I. D. 2003, MNRAS, 339, 157
+Hilditch, R. W., Howarth, I. D., & Harries, T. J. 2005, MNRAS, 357, 304
+Humphreys, R. M. 1983, ApJ, 265, 176
+
+Hunter, I., et al. 2007, A&A, 466, 277
+Ita, Y., et al. 2010a, A&A, 514, 2
+Ita, Y., et al. 2010b, PASJ, 62, 573
+Kato, D., et al. 2007, PASJ, 59, 615
+Kippenhahn, R., & Weigert, A. 1990, Stellar Structure and Evolution (Berlin:
+
+Springer)
+
+Lanz, T., & Hubeny, I. 2003, ApJS, 146, 417
+Lanz, T., & Hubeny, I. 2007, ApJS, 169, 83
+Larsen, S. S., Clausen, J. V., & Storm, J. 2000, A&A, 364, 455
+Leitherer, C., Robert, C., & Drissen, L. 1992, ApJ, 401, 596
+Lennon, D. J. 1997, A&A, 317, 871
+Lennon, D. J., et al. 1993, Space Sci. Rev., 66, 169
+Levesque, E. M., et al. 2006, ApJ, 645, 1102
+Levesque, E. M., et al. 2007, ApJ, 667, 202
+Liu, Q. Z., van Paradijs, J., & van den Heuvel, E. P. J. 2005, A&A, 442, 1135
+Maeder, A., Grebel, E. K., & Mermilliod, J. 1999, A&A, 346, 459
+Marshall, J. R., van Loon, J. T., Matsuura, M., Wood, P. R., Zijlstra, A. A., &
+
+Whitelock, P. A. 2004, MNRAS, 355, 1348
+
+Martayan, C., Baade, D., & Fabregat, J. 2010, A&A, 509, A11
+Martayan, C., et al. 2007a, A&A, 472, 577
+Martayan, C., et al. 2007b, A&A, 462, 683
+Massey, P. 2002, ApJS, 141, 81
+Massey, P. 2010, in ASP Conf. Ser. 425, Hot and Cool: Bridging Gaps in Massive
+
+Star Evolution, ed. C. Leitherer, et al., in press (arXiv:0903.0155)
+
+Massey, P., & Olsen, K. A. G. 2003, AJ, 126, 2867
+Massey, P., Olsen, K. A. G., & Parker, J. W. 2003, PASP, 115, 1265
+Massey, P., Parker, J. W., & Garmany, C. D. 1989, AJ, 98, 1305
+Massey, P., Waterhouse, E., & DeGioia-Eastwood, K. 2000, AJ, 119, 2214
+Massey, P., et al. 1995, ApJ, 438, 188
+Massey, P., et al. 2005, ApJ, 627, 477
+Massey, P., et al. 2009, ApJ, 692, 618
+McDonald, I., et al. 2009, MNRAS, 394, 831
+Meixner, M., et al. 2006, AJ, 132, 2268
+Mennickent, R. E., et al. 2006, A&A, 457, 949
+Mokiem, M. R., et al. 2007, A&A, 473, 603
+Negueruela, I., Steele, I. A., & Bernabeu, G. 2004, Astron. Nachr., 325, 749
+Oestreicher, M. O., Schmidt-Kaler, T., & Wargau, W. 1997, MNRAS, 289,
+
+729
+
+Osmer, P. S. 1973, ApJ, 181, 327
+Panagia, N., & Felli, M. 1975, A&A, 39, 1
+Panagia, N., & Thum, C. 1981, A&A, 98, 295
+Pojma´nski, G. 2002, Acta Astron., 52, 397
+Porter, J. M., & Rivinius, T. 2003, PASP, 115, 1153
+Prieto, J. L., et al. 2008, ApJ, 673, L59
+Raguzova, N. V., & Popov, S. B. 2005, Astron. Astrophys. Trans., 24, 151
+Reach, W. T., et al. 2005, PASP, 117, 978
+Sanduleak, N. 1968, AJ, 73, 246
+Sanduleak, N. 1969, AJ, 74, 877
+Skrutskie, M. F., et al. 2006, AJ, 131, 1163
+Sloan, G. C., et al. 2008, ApJ, 686, 1056
+Smith Neubig, M. M., & Bruhweiler, F. C. 1997, AJ, 114, 1951
+Srinivasan, S., et al. 2009, AJ, 137, 4810
+Szczygiel, D. M., et al. 2010, AJ, 140, 14
+Szyma´nski, M. K. 2005, Acta Astron., 55, 43
+Udalski, A., Kubiak, M., & Szyma´nski, M. 1997, Acta Astron., 47, 319
+Udalski, A., et al. 2008, Acta Astron., 58, 329
+van Loon, J. T. 2000, A&A, 354, 125
+van Loon, J. T.
+
+, et al. 2006, in ASP Conf. Ser. 353, Stellar Evolution at Low
+Metallicity: Mass Loss, Explosions, Cosmology, ed. H. J. G. L. M. Lamers
+(San Francisco, CA: ASP), 211
+
+van Loon, J. T. 2007, in ASP Conf. Ser. 378, Why Galaxies Care About
+AGB Stars: Their Importance as Actors and Probes, ed. F. Kerschbaum,
+C. Charbonnel, & R. F. Wing (San Francisco, CA: ASP), 227
+
+van Loon, J. T., et al. 1999, A&A, 351, 559
+van Loon, J. T., et al. 2005, A&A, 438, 273
+van Loon, J. T., et al. 2008, A&A, 487, 1055
+van Loon, J. T., et al. 2010a, AJ, 139, 68
+van Loon, J. T., et al. 2010b, AJ, 139, 1553
+Verhoelst, T., et al. 2009, A&A, 498, 127
+Vink, J. S., de Koter, A., & Lamers, H. J. G. L. M. 2001, A&A, 369, 574
+Wisniewski, J. P., & Bjorkman, K. S. 2006, ApJ, 652, 458
+Wisniewski, J. P., et al. 2007, ApJ, 670, 1331
+Wood, P. R., et al. 1992, ApJ, 397, 552
+Wright, A. E., & Barlow, M. J. 1975, MNRAS, 170, 41
+Zaritsky, D., et al. 2002, AJ, 123, 855
+Zickgraf, F.-J. 2006, in ASP Conf. Ser. 355, Stars with the B[e] Phenomenon,
+ed. M. Kraus & A. S. Miroshnichenko (San Francisco, CA: ASP), 135
+
+

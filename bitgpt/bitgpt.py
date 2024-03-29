@@ -57,15 +57,15 @@ class RMSNorm(nn.Module):
     
 class BitLinear(nn.Linear):
     '''
-    This is only for training, and kernel optimization is needed for efficiency.
     '''
-    def __init__(self, in_features: int, out_features: int, bias=False):
+    def __init__(self, in_features: int, out_features: int, bias=False, inference=False):
         super(BitLinear, self).__init__(in_features, out_features, bias)
         self.dim = self.in_features
+        self.inference = inference
         self.out_features = self.out_features
         self.rms_norm = RMSNorm(self.dim)
 
-    def forward(self, x, inference: bool = False):
+    def forward(self, x):
         '''
         Args:
             x: an input tensor with shape [n, d]
@@ -74,7 +74,7 @@ class BitLinear(nn.Linear):
             y: an output tensor with shape [n, d]
         '''
         w = self.weight
-        if not inference:
+        if not self.inference:
             x_norm = self.rms_norm(x)
             # A trick for implementing Straight−Through−Estimator (STE) using detach()
             x_quant = x_norm + (self.activation_quant(x_norm) - x_norm).detach()
@@ -159,22 +159,6 @@ class Head(nn.Module):
         out = wei @ v  # (B, T, T) @ (B, T, hs) -> (B, T, hs)
         return out
 
-
-class MultiHeadAttention(nn.Module):
-    """ multiple heads of self-attention in parallel """
-
-    def __init__(self, config, head_size):
-        super().__init__()
-        self.heads = nn.ModuleList([Head(config, head_size) for _ in range(config.n_head)])
-        self.proj = BitLinear(head_size * config.n_head, config.n_embd)
-        self.dropout = nn.Dropout(config.dropout)
-
-    def forward(self, x):
-        out = torch.cat([h(x) for h in self.heads], dim=-1)
-        out = self.dropout(self.proj(out))
-        return out
-
-
 class FeedFoward(nn.Module):
     """ a simple linear layer followed by a non-linearity """
 
@@ -189,7 +173,20 @@ class FeedFoward(nn.Module):
 
     def forward(self, x):
         return self.net(x)
+    
+class MultiHeadAttention(nn.Module):
+    """ multiple heads of self-attention in parallel """
 
+    def __init__(self, config, head_size):
+        super().__init__()
+        self.heads = nn.ModuleList([Head(config, head_size) for _ in range(config.n_head)])
+        self.proj = BitLinear(head_size * config.n_head, config.n_embd)
+        self.dropout = nn.Dropout(config.dropout)
+
+    def forward(self, x):
+        out = torch.cat([h(x) for h in self.heads], dim=-1)
+        out = self.dropout(self.proj(out))
+        return out
 
 class Block(nn.Module):
     """ Transformer block: communication followed by computation """
@@ -213,16 +210,13 @@ class BitGPTLanguageModel(nn.Module):
         assert config.vocab_size is not None
         assert config.block_size is not None
         self.config = config
-        
         # each token directly reads off the logits for the next token from a lookup table
         self.token_embedding_table = nn.Embedding(config.vocab_size, config.n_embd)
         self.position_embedding_table = nn.Embedding(config.block_size, config.n_embd)
         self.blocks = nn.Sequential(
             *[Block(config) for _ in range(config.n_layer)])
-        self.ln_f = nn.LayerNorm(config.n_embd)  # final layer norm
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size)
 
-        # better init, not covered in the original GPT video, but important, will cover in followup video
         self.apply(self._init_weights)
 
     def _init_weights(self, module):
@@ -234,8 +228,8 @@ class BitGPTLanguageModel(nn.Module):
             torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
 
     def forward(self, idx, targets=None):
+        
         B, T = idx.shape
-
         device = idx.device
         # idx and targets are both (B,T) tensor of integers
         tok_emb = self.token_embedding_table(idx)  # (B,T,C)
@@ -243,9 +237,8 @@ class BitGPTLanguageModel(nn.Module):
             torch.arange(T, device=device))  # (T,C)
         x = tok_emb + pos_emb  # (B,T,C)
         x = self.blocks(x)  # (B,T,C)
-        x = self.ln_f(x)  # (B,T,C)
         logits = self.lm_head(x)  # (B,T,vocab_size)
-
+        
         if targets is None:
             loss = None
         else:
@@ -255,3 +248,28 @@ class BitGPTLanguageModel(nn.Module):
             loss = F.cross_entropy(logits, targets)
 
         return logits, loss
+    
+    @torch.no_grad()
+    def generate(self, idx, max_new_tokens, temperature=1.0, top_k=None):
+        """
+        Take a conditioning sequence of indices idx (LongTensor of shape (b,t)) and complete
+        the sequence max_new_tokens times, feeding the predictions back into the model each time.
+        Most likely you'll want to make sure to be in model.eval() mode of operation for this.
+        """
+        for _ in range(max_new_tokens):
+            
+            idx_cond = idx if idx.size(1) <= self.config.block_size else idx[:, -self.config.block_size:]
+            
+            logits, _ = self(idx_cond)
+            logits = logits[:, -1, :] / temperature
+            
+            if top_k is not None:
+                v, _ = torch.topk(logits, min(top_k, logits.size(-1)))
+                logits[logits < v[:, [-1]]] = -float('Inf')
+            
+            probs = F.softmax(logits, dim=-1)
+            
+            idx_next = torch.multinomial(probs, num_samples=1)
+            idx = torch.cat((idx, idx_next), dim=1)
+
+        return idx

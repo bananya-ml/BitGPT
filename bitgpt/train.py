@@ -3,7 +3,21 @@ import tiktoken
 from bitgpt import BitGPTLanguageModel, BitGPTConfig, BitLinear
 from tqdm import tqdm
 import os
+import math
 
+# learning rate decay scheduler (cosine with warmup)
+def get_lr(it):
+    # 1) linear warmup for warmup_iters steps
+    if it < warmup_iters:
+        return learning_rate * it / warmup_iters
+    # 2) if it > lr_decay_iters, return min learning rate
+    if it > lr_decay_iters:
+        return min_lr
+    # 3) in between, use cosine decay down to min learning rate
+    decay_ratio = (it - warmup_iters) / (lr_decay_iters - warmup_iters)
+    assert 0 <= decay_ratio <= 1
+    coeff = 0.5 * (1.0 + math.cos(math.pi * decay_ratio)) # coeff ranges 0..1
+    return min_lr + coeff * (learning_rate - min_lr)
 
 def quantize(w: torch.Tensor):
     """
@@ -51,9 +65,9 @@ def estimate_loss():
 # hyperparameters
 batch_size = 64  # how many independent sequences will we process in parallel?
 block_size = 128  # what is the maximum context length for predictions?
-max_iters = 5000
-eval_interval = 500
-learning_rate = 1e-3
+max_iters = 250
+eval_interval = 100
+learning_rate = 6e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"Using {device} for training")
 eval_iters = 200
@@ -61,6 +75,12 @@ n_embd = 64
 n_head = 1
 n_layer = 1
 dropout = 0.2
+
+#for lr scheduler
+decay_lr = True # whether to decay the learning rate
+warmup_iters = 200 # how many steps to warm up for
+lr_decay_iters = 5000 # should be ~= max_iters per Chinchilla
+min_lr = 6e-5 # minimum learning rate, should be ~= learning_rate/10 per Chinchilla
 # ------------
 
 torch.manual_seed(1337)
@@ -132,6 +152,8 @@ for iter in tqdm(range(max_iters)):
     loss.backward()
     optimizer.step()
 
+meta = {} # save full precision weight scales for generation later
+
 for name, layer in model.named_modules():
             if isinstance(layer, BitLinear):
                 for k, v in layer.state_dict().items():
@@ -140,15 +162,14 @@ for name, layer in model.named_modules():
                         layer.weight.requires_grad = False
                         layer.weight.data = w_quant
                         layer.weight_scale = scale
-    
-inference = True
-
+                        meta[name] = scale
 checkpoint = {
                     'model': model.state_dict(),
                     'optimizer': optimizer.state_dict(),
                     'model_args': model_args,
                     'best_val_loss': best_val_loss,
                     'config': config,
+                    'meta': meta
                 }
 torch.save(checkpoint, os.path.join(os.getcwd(), "models\\bitGPT.pt"))
 # open('more.txt', 'w').write(decode(m.generate(context, max_new_tokens=10000)[0].tolist()))

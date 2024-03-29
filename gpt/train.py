@@ -49,7 +49,7 @@ def estimate_loss():
 # hyperparameters
 batch_size = 64  # how many independent sequences will we process in parallel?
 block_size = 128  # what is the maximum context length for predictions?
-max_iters = 5000
+max_iters = 2500
 eval_interval = 500
 learning_rate = 6e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'

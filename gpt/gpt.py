@@ -135,7 +135,7 @@ class GPTLanguageModel(nn.Module):
         if targets is None:
             loss = None
         else:
-            B, T, C = logits.shape
+            B, T, C = logits.shapes
             logits = logits.view(B*T, C)
             targets = targets.view(B*T)
             loss = F.cross_entropy(logits, targets)

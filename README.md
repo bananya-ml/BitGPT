@@ -37,6 +37,14 @@ python train.py
 
 to train and save a model with the default settings. You might want to play around with the hyperparameters to balance speed and quality of your trained model.
 
+## Data
+
+The data directory contains 2 files: `shakespeare.txt` which contains 40,000 lines from William Shakespeare's writing and `astro.txt` which contains about 35,000 lines stripped from research papers around massive stars,
+machine learning and spectroscopy. Either file can be chosen as the training data, and any other text file can be placed in the directory and be used as training material, after changing the relevant part of the code
+to be use the custom dataset.
+
+I will, in the future, try to add support for more types of datasets, e.g. an instruction dataset, as I add greater functionality to use the trained model, e.g. as a chatbot. 
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

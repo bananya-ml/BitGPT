@@ -10,7 +10,7 @@ def decode(l): return ''.join([itos[i] for i in l])
 
 
 num_samples = 2
-max_new_tokens = 500
+max_new_tokens = 2000
 temperature = 1.0
 top_k = 200
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -44,7 +44,7 @@ for name, module in model.named_modules():
 
 prompt = ''
 
-with open('input.txt', 'r', encoding='utf-8') as f:
+with open(os.path.join(os.getcwd(),'data\\shakespeare.txt'), 'r', encoding='utf-8') as f:
     text = f.read()
 
 chars = sorted(list(set(text)))
@@ -60,3 +60,6 @@ with torch.no_grad():
             y = model.generate(x, max_new_tokens, temperature=temperature, top_k=top_k)
             print(decode(y[0].tolist()))
             print('---------------')
+            with open(os.path.join(os.getcwd(),'bitgpt\\more.txt'),'w') as file:
+                file.write(decode(y[0].tolist()))
+            

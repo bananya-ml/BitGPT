@@ -49,15 +49,15 @@ def estimate_loss():
 # hyperparameters
 batch_size = 64  # how many independent sequences will we process in parallel?
 block_size = 128  # what is the maximum context length for predictions?
-max_iters = 2500
+max_iters = 5000
 eval_interval = 500
-learning_rate = 6e-4
+learning_rate = 1e-3
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"Using {device} for training")
 eval_iters = 200
-n_embd = 64
-n_head = 1
-n_layer = 1
+n_embd = 384
+n_head = 4
+n_layer = 4
 dropout = 0.2
 
 #for lr scheduler
@@ -69,7 +69,7 @@ min_lr = 6e-5 # minimum learning rate, should be ~= learning_rate/10 per Chinchi
 
 torch.manual_seed(1337)
 
-with open('input.txt', 'r', encoding='utf-8') as f:
+with open(os.path.join(os.getcwd(),'data\\shakespeare.txt'), encoding='utf-8') as f:
     text = f.read()
 
 # here are all the unique characters that occur in this text
@@ -127,8 +127,6 @@ for iter in tqdm(range(max_iters)):
             f"step {iter}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}")
         if losses['val'] < best_val_loss:
             best_val_loss = losses['val']
-        elif losses['val'] > best_val_loss:
-            break 
     # sample a batch of data
     xb, yb = get_batch('train')
 
@@ -138,9 +136,6 @@ for iter in tqdm(range(max_iters)):
     loss.backward()
     optimizer.step()
 
-# generate from the model
-context = torch.zeros((1, 1), dtype=torch.long, device=device)
-print(decode(m.generate(context, max_new_tokens=100)[0].tolist()))
 checkpoint = {
                     'model': model.state_dict(),
                     'optimizer': optimizer.state_dict(),
@@ -149,4 +144,3 @@ checkpoint = {
                     'config': config,
                 }
 torch.save(checkpoint, os.path.join(os.getcwd(), "models\\gpt.pt"))
-# open('more.txt', 'w').write(decode(m.generate(context, max_new_tokens=10000)[0].tolist()))

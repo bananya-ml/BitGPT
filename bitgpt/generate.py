@@ -12,7 +12,7 @@ def ParseArgs():
                         help='number of samples to generate(default: 2)')
     parser.add_argument('--max-new-tokens',type=int,default=2000,metavar='N',
                         help='maximum context length for predictions(default: 2000)')
-    parser.add_argument('--temperature',type=int,default=1,metavar='N',
+    parser.add_argument('--temperature',type=float,default=1.0,metavar='N',
                         help='1.0 = no change, < 1.0 = less random, > 1.0 = more random, in predictions(default= 1.0)')
     parser.add_argument('--top-k',type=int,default=200,metavar='N',
                         help='# retain only the top_k most likely tokens, clamp others to have 0 probability(default: 200)')

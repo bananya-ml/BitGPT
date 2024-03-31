@@ -37,6 +37,24 @@ python train.py
 
 to train and save a model with the default settings. You might want to play around with the hyperparameters to balance speed and quality of your trained model.
 
+## Inference
+
+Each directory containing a `model.py` will also contain a `generate.py` that can be used as 
+
+```
+python ./gpt/generate.py
+```
+
+from the root directory of the project. The following arguments can be used with the `generate.py` file to tune the output:
+
+| Name           | Description                                                                | Default Values |
+|----------------|----------------------------------------------------------------------------|----------------|
+|--prompt        |Generation from the model follows the prompt                                |''              |
+|--num-samples   |Number of samples to generate                                               |2               |
+|--max-new-tokens|Maximum context length for predictions                                      |2000            |
+|--temperature   |1.0 = no change, < 1.0 = less random, > 1.0 = more random, in predictions   |1.0             |
+|--top-k         |Retain only the top_k most likely tokens, clamp others to have 0 probability|200             |
+
 ## Data
 
 The data directory contains 2 files: `shakespeare.txt` which contains 40,000 lines from William Shakespeare's writing and `astro.txt` which contains about 35,000 lines stripped from research papers around massive stars,

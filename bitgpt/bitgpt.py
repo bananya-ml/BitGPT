@@ -216,6 +216,7 @@ class BitGPTLanguageModel(nn.Module):
         self.position_embedding_table = nn.Embedding(config.block_size, config.n_embd)
         self.blocks = nn.Sequential(
             *[Block(config) for _ in range(config.n_layer)])
+        self.out_norm = nn.LayerNorm(config.n_embd)
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size)
 
         self.apply(self._init_weights)
@@ -238,6 +239,7 @@ class BitGPTLanguageModel(nn.Module):
             torch.arange(T, device=device))  # (T,C)
         x = tok_emb + pos_emb  # (B,T,C)
         x = self.blocks(x)  # (B,T,C)
+        x = self.out_norm(x)
         logits = self.lm_head(x)  # (B,T,vocab_size)
         
         if targets is None:

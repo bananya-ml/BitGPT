@@ -97,21 +97,21 @@ args = ParseArgs()
 
 # hyperparameters
 batch_size = 64  # how many independent sequences will we process in parallel?
-block_size = 256  # what is the maximum context length for predictions?
-eval_interval = 2000
+block_size = 128  # what is the maximum context length for predictions?
+eval_interval = 200
 eval_iters = 200
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device_type = 'cuda' if 'cuda' in device else 'cpu'
 print(f"Using {device} for training")
 
 # model
-n_embd = 64
+n_embd = 128
 n_head = 1
 n_layer = 1
 dropout = 0.2
 
 # optimizer
-max_iters = 500000
+max_iters = 50000
 learning_rate = 6e-4
 beta1 = 0.9
 beta2= 0.95
@@ -120,7 +120,7 @@ weight_decay = 1e-1
 #for lr scheduler
 decay_lr = True # whether to decay the learning rate
 warmup_iters = 200 # how many steps to warm up for
-lr_decay_iters = 500000 # should be ~= max_iters per Chinchilla
+lr_decay_iters = 50000 # should be ~= max_iters per Chinchilla
 min_lr = 6e-5 # minimum learning rate, should be ~= learning_rate/10 per Chinchilla
 
 
@@ -128,20 +128,21 @@ best_val_loss = 1e9
 inference = False
 
 #wandb logging
-wandb_log = False
+wandb_log = True
 wandb_project = 'GPT'
 # ------------
 
 torch.manual_seed(1337)
 
-with open(os.path.join(os.getcwd(),'data\\shakespeare.txt'), encoding='utf-8') as f:
+with open(os.path.join(os.getcwd(),'data\\astro.txt'), encoding='utf-8') as f:
     text = f.read()
 
-chars = sorted(list(set(text)))
+#chars = sorted(list(set(text)))
 
-vocab_size = len(chars) # for individual characters as elements
-#vocab_size: int = 50304 # GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
+#vocab_size = len(chars) # for individual characters as elements
+vocab_size: int = 50304 # GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
 
+'''
 stoi = {ch: i for i, ch in enumerate(chars)}
 itos = {i: ch for i, ch in enumerate(chars)}
 
@@ -149,12 +150,12 @@ itos = {i: ch for i, ch in enumerate(chars)}
 def encode(s): return [stoi[c] for c in s]
 # decoder: take a list of integers, output a string
 def decode(l): return ''.join([itos[i] for i in l])
-
 '''
+
 enc = tiktoken.get_encoding("gpt2")
 encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
 decode = lambda l: enc.decode(l)
-'''
+
 
 # Train and test splits
 data = torch.tensor(encode(text), dtype=torch.long)
@@ -180,6 +181,8 @@ if wandb_log:
 for iter in tqdm(range(max_iters)):
 
     lr = get_lr(iter) if decay_lr else learning_rate
+    for param_group in optimizer.param_groups:
+        param_group['lr'] = lr
     
     # every once in a while evaluate the loss on train and val sets
     if iter % eval_interval == 0 or iter == max_iters - 1:
@@ -212,4 +215,4 @@ checkpoint = {
                     'best_val_loss': best_val_loss,
                     'config': config,
                 }
-#torch.save(checkpoint, os.path.join(os.getcwd(), "models\\gpt.pt"))
+torch.save(checkpoint, os.path.join(os.getcwd(), "models\\astrogpt.pt"))

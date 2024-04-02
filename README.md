@@ -35,6 +35,12 @@ Once the installation is complete, run
 python train.py
 ```
 
+or
+
+```
+python ./bitgpt/train.py
+
+
 to train and save a model with the default settings. You might want to play around with the hyperparameters to balance speed and quality of your trained model.
 
 ## Inference
@@ -47,13 +53,16 @@ python ./gpt/generate.py
 
 from the root directory of the project. The following arguments can be used with the `generate.py` file to tune the output:
 
-| Name           | Description                                                                | Default Values |
-|----------------|----------------------------------------------------------------------------|----------------|
-|--prompt        |Generation from the model follows the prompt                                |''              |
-|--num-samples   |Number of samples to generate                                               |2               |
-|--max-new-tokens|Maximum context length for predictions                                      |2000            |
-|--temperature   |1.0 = no change, < 1.0 = less random, > 1.0 = more random, in predictions   |1.0             |
-|--top-k         |Retain only the top_k most likely tokens, clamp others to have 0 probability|200             |
+| Name           | Description                                                                |Type  | Default Values |
+|----------------|----------------------------------------------------------------------------|------|----------------|
+|--prompt        |Generation from the model follows the prompt                                |str   |''              |
+|--num-samples   |Number of samples to generate                                               |int   |2               |
+|--max-new-tokens|Maximum context length for predictions                                      |int   |2000            |
+|--temperature   |1.0 = no change, < 1.0 = less random, > 1.0 = more random, in predictions   |float |1.0             |
+|--top-k         |Retain only the top_k most likely tokens, clamp others to have 0 probability|int   |200             |
+
+
++ **NOTE** According to an [FAQ released by Microsoft](https://github.com/microsoft/unilm/blob/master/bitnet/The-Era-of-1-bit-LLMs__Training_Tips_Code_FAQ.pdf), BitLinear layers require a low bit GEMM kernel during inference. No particular implementation of a kernel is provided by the paper, so we use an unofficial implementation of our own. Until such a time as the authors of [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](https://arxiv.org/abs/2402.17764) release an implementation, I will assume the kernel does not make a significant difference in the quality of inference.
 
 ## Data
 

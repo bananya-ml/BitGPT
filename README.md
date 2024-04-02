@@ -1,4 +1,4 @@
-# BitGPT: A 1-bit version of the GPT Language model, inspired from [Andrej Karpthay's tutorial](https://github.com/karpathy/nanoGPT) on building a GPT from scratch.
+# BitGPT: A 1-bit version of the GPT Language model, inspired from [Andrej Karpathy's tutorial](https://github.com/karpathy/nanoGPT) on building a GPT from scratch.
 
 BitGPT is an attempt at including the best practices of building a language model, while providing the user with as much accessibility and flexibility as possible. The 1-bit version is adapted from the paper 
 [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](https://arxiv.org/abs/2402.17764), originally created for the [LLama model](https://github.com/meta-llama/llama).

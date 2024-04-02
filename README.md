@@ -9,7 +9,7 @@ subdirectory will usually contain a `model.py`, defining the architecture, and a
 
 The training script will allow you to train everything from a model with as little as 50k parameters to ones over 1B parameters. 
 
-## Install
+## Training
 
 Simply clone the repository
 
@@ -29,13 +29,40 @@ Remember, this downloads a CUDA-enabled version of PyTorch, which can take a whi
 $ pip install torch
 ```
 
-Once the installation is complete, run
+Once the installation is complete, from the root directory, you can run
 
 ```
-python train.py
+python ./gpt/train.py
 ```
+
+or
+
+```
+python ./bitgpt/train.py
+
 
 to train and save a model with the default settings. You might want to play around with the hyperparameters to balance speed and quality of your trained model.
+
+| Name           | Description                                       |Type  | Default Values |
+|----------------|---------------------------------------------------|------|----------------|
+|--batch-size    |Batch size for training                            |int   |64              |
+|--block-size    |Maximum context length for predictions             |int   |256             |
+|--max-iters     |Number of epochs to train                          |int   |500000          |
+|--eval-iters    |Number of batches used to estimate loss during eval|int   |200             |
+|-eval-interval  |Interval after which eval is performed             |int   |2000            |  
+|--lr            |Learning rate                                      |float |6e-4            |
+|--n-head        |Number of heads in the transformer architecture    |float |4               |
+|--n-layer       |Number of layers of the transformer architecture   |float |4               |
+|--n-embd        |Embedding dimension                                |float |384             |
+|--dropout,--d   |Dropout value                                      |float |0.2             |
+|--weight-decay  |Weight decay                                       |float |1e-1            |
+|--decay-lr      |Flag for learning rate decay                       |bool  |True            |
+|--warmup-iters  |Steps to warmup lr decay                           |int   |200             |
+|--lr-decay-iters|Should be ~= max_iters per Chinchilla              |int   |500000          |
+|--min-lr        |Should be learning rate/10 per Chinchilla          |int   |6e-5            |
+|--wandb-log     |Logging using wandb (need to login to wandb first) |bool  |False           |
+|--seed          |Random seed                                        |int   |1337            |
+
 
 ## Inference
 
@@ -47,13 +74,16 @@ python ./gpt/generate.py
 
 from the root directory of the project. The following arguments can be used with the `generate.py` file to tune the output:
 
-| Name           | Description                                                                | Default Values |
-|----------------|----------------------------------------------------------------------------|----------------|
-|--prompt        |Generation from the model follows the prompt                                |''              |
-|--num-samples   |Number of samples to generate                                               |2               |
-|--max-new-tokens|Maximum context length for predictions                                      |2000            |
-|--temperature   |1.0 = no change, < 1.0 = less random, > 1.0 = more random, in predictions   |1.0             |
-|--top-k         |Retain only the top_k most likely tokens, clamp others to have 0 probability|200             |
+| Name           | Description                                                                |Type  | Default Values |
+|----------------|----------------------------------------------------------------------------|------|----------------|
+|--prompt        |Generation from the model follows the prompt                                |str   |''              |
+|--num-samples   |Number of samples to generate                                               |int   |2               |
+|--max-new-tokens|Maximum context length for predictions                                      |int   |2000            |
+|--temperature   |1.0 = no change, < 1.0 = less random, > 1.0 = more random, in predictions   |float |1.0             |
+|--top-k         |Retain only the top_k most likely tokens, clamp others to have 0 probability|int   |200             |
+
+
++ **NOTE** According to an [FAQ released by Microsoft](https://github.com/microsoft/unilm/blob/master/bitnet/The-Era-of-1-bit-LLMs__Training_Tips_Code_FAQ.pdf), BitLinear layers require a low bit GEMM kernel during inference. No particular implementation of a kernel is provided by the paper, so we use an unofficial implementation of our own. Until such a time as the authors of [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](https://arxiv.org/abs/2402.17764) release an implementation, I will assume the kernel does not make a significant difference in the quality of inference.
 
 ## Data
 
@@ -66,8 +96,6 @@ I will, in the future, try to add support for more types of datasets, e.g. an in
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-[Link to MIT License](https://opensource.org/licenses/MIT)
 
 ## References
 

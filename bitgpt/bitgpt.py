@@ -84,9 +84,9 @@ class BitLinear(nn.Linear):
         else:
             x_quant, x_scale = self.activation_norm_quant(x)
             w_scale = self.weight_scale
-            # according to the paper, this linear layer may have to be replaced by a gemm_lowbit_kernel,
-            # but no such kernel is available, nor any directions on how to implement it, so we'll just use linear
-            y = F.linear(x_quant, w.float(), self.bias) / (x_scale * w_scale)
+            y = self.lowbit_gemm_kernel(x_quant, w) / (w_scale * x_scale)
+            if self.bias is not None:
+                y += self.bias
             return y
 
     def activation_quant(self, x):
@@ -125,7 +125,31 @@ class BitLinear(nn.Linear):
         scale = 1.0/w.abs().mean().clamp_(min=1e-5)
         u = (w*scale).round().clamp_(-1,1)/scale
         return u
+    
+    def lowbit_gemm_kernel(self, x, w):
+        '''
+        Low-bit GEMM kernel for 2-bit weights.
+        Args:
+            x (torch.Tensor): Input tensor with shape [n, d].
+            w (torch.Tensor): Weight tensor with shape [d, k], quantized to 2-bit values (-1, 0, 1, 2).
+        Returns:
+            y (torch.Tensor): Output tensor with shape [n, k].
+        '''
+        # compute the GEMM using bit operations
+        # we split the weight tensor into four tensors based on the value
+        w_neg1 = (w == -1).float()
+        w_0 = (w == 0).float()
+        w_1 = (w == 1).float()
 
+        # compute the partial products
+        y_neg1 = x @ w_neg1.transpose(0, 1)
+        y_0 = x @ w_0.transpose(0, 1)
+        y_1 = x @ w_1.transpose(0, 1)
+
+        # combine the partial products
+        y = y_1 - y_neg1
+
+        return y
 
 class Head(nn.Module):
     ''' 

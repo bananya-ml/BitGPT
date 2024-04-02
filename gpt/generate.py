@@ -2,6 +2,7 @@ from gpt import GPTLanguageModel, GPTConfig
 from contextlib import nullcontext
 import torch
 import os
+import tiktoken
 import argparse
 
 def ParseArgs():
@@ -19,10 +20,19 @@ def ParseArgs():
     args = parser.parse_args()
     return args
 
+'''
+with open(os.path.join(os.getcwd(),'data/shakespeare.txt'), 'r', encoding='utf-8') as f:
+    text = f.read()
+
+chars = sorted(list(set(text)))
+stoi = {ch: i for i, ch in enumerate(chars)}
+itos = {i: ch for i, ch in enumerate(chars)}
+
 # encoder: take a string, output a list of integers
 def encode(s): return [stoi[c] for c in s]
 # decoder: take a list of integers, output a string
 def decode(l): return ''.join([itos[i] for i in l])
+'''
 
 args = ParseArgs()
 
@@ -39,8 +49,7 @@ ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torc
 ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=device_type, dtype=ptdtype)
 
 
-
-ckpt = torch.load(os.path.join(os.getcwd(), "models\\gpt.pt"))
+ckpt = torch.load(os.path.join(os.getcwd(), "models/gpt.pt"))
 
 config = GPTConfig(**ckpt['model_args'])
 model = GPTLanguageModel(config)
@@ -53,12 +62,9 @@ model.to(device)
 
 prompt = ''
 
-with open(os.path.join(os.getcwd(),'data\\shakespeare.txt'), 'r', encoding='utf-8') as f:
-    text = f.read()
-
-chars = sorted(list(set(text)))
-stoi = {ch: i for i, ch in enumerate(chars)}
-itos = {i: ch for i, ch in enumerate(chars)}
+enc = tiktoken.get_encoding("gpt2")
+encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
+decode = lambda l: enc.decode(l)
 
 start_ids = torch.zeros((1), dtype=torch.long, device=device) if prompt == '' else encode(prompt) 
 x = start_ids.clone().detach()[None, ...]
@@ -69,5 +75,5 @@ with torch.no_grad():
             y = model.generate(x, max_new_tokens, temperature=temperature, top_k=top_k)
             print(decode(y[0].tolist()))
             print('---------------')
-            with open(os.path.join(os.getcwd(),'gpt\\more.txt'),'w') as file:
+            with open(os.path.join(os.getcwd(),'gpt/more.txt'),'w') as file:
                 file.write(decode(y[0].tolist()))

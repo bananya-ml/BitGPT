@@ -57,8 +57,6 @@ class RMSNorm(nn.Module):
         return output * self.weight
     
 class BitLinear(nn.Linear):
-    '''
-    '''
     def __init__(self, in_features: int, out_features: int, bias=False, inference=False):
         super(BitLinear, self).__init__(in_features, out_features, bias)
         self.dim = self.in_features
@@ -130,7 +128,23 @@ class BitLinear(nn.Linear):
 
 
 class Head(nn.Module):
-    """ one head of self-attention """
+    ''' 
+    One head of self-attention.
+
+    Args:
+        config: the model configuration
+        head_size: the size of the head
+
+    Attributes:
+        key: the bitlinear layer for the key
+        query: the bitlinear layer for the query
+        value: the bitlinear layer for the value
+        tril: a lower triangular matrix of ones
+        dropout: a dropout layer
+
+    Return:
+        out: the output of the head
+    '''
 
     def __init__(self, config, head_size):
         super().__init__()
@@ -161,7 +175,18 @@ class Head(nn.Module):
         return out
 
 class FeedFoward(nn.Module):
-    """ a simple linear layer followed by a non-linearity """
+    ''' 
+    A simple linear layer followed by a non-linearity 
+    
+    Args:
+        config: the model configuration
+    
+    Attributes:
+        net: a sequence of layers
+
+    Return:
+        out: the output of the feedforward network
+    '''
 
     def __init__(self, config):
         super().__init__()
@@ -176,7 +201,21 @@ class FeedFoward(nn.Module):
         return self.net(x)
     
 class MultiHeadAttention(nn.Module):
-    """ multiple heads of self-attention in parallel """
+    ''' 
+    Multiple heads of self-attention in parallel 
+    
+    Args:
+        config: the model configuration
+        head_size: the size of the head
+    
+    Attributes:
+        heads: a list of heads
+        proj: a bitlinear layer
+        dropout: a dropout layer
+
+    Return:
+        out: the output of the multi-head attention
+    '''
 
     def __init__(self, config, head_size):
         super().__init__()
@@ -190,7 +229,19 @@ class MultiHeadAttention(nn.Module):
         return out
 
 class Block(nn.Module):
-    """ Transformer block: communication followed by computation """
+    ''' 
+    Transformer block: communication followed by computation 
+    
+    Args:
+        config: the model configuration
+
+    Attributes:
+        sa: the multi-head self-attention layer
+        ffwd: the feedforward layer
+
+    Return:
+        out: the output of the block
+    '''
 
     def __init__(self, config):
         # n_embd: embedding dimension, n_head: the number of heads we'd like
@@ -254,11 +305,18 @@ class BitGPTLanguageModel(nn.Module):
     
     @torch.no_grad()
     def generate(self, idx, max_new_tokens, temperature=1.0, top_k=None):
-        """
+        '''
         Take a conditioning sequence of indices idx (LongTensor of shape (b,t)) and complete
         the sequence max_new_tokens times, feeding the predictions back into the model each time.
-        Most likely you'll want to make sure to be in model.eval() mode of operation for this.
-        """
+        Args:
+            idx: the initial seed indices (LongTensor of shape (b,t))
+            max_new_tokens: the number of tokens to generate
+            temperature: the temperature of the sampling distribution
+            top_k: the number of top-k most likely tokens to sample from. If None, sample from the whole distribution.
+        
+        Returns:
+            idx: the tensor of generated indices (LongTensor of shape (b,t+max_new_tokens))
+        '''
         for _ in range(max_new_tokens):
             
             idx_cond = idx if idx.size(1) <= self.config.block_size else idx[:, -self.config.block_size:]
@@ -278,6 +336,18 @@ class BitGPTLanguageModel(nn.Module):
         return idx
     
     def configure_optimizers(self, weight_decay, learning_rate, betas, device_type):
+        '''
+        Configure optimizer (AdamW) for training the model.
+
+        Args:
+            weight_decay (float): the weight decay coefficient
+            learning_rate (float): the learning rate
+            betas (tuple): the beta coefficients for AdamW
+            device_type (str): the device type
+        
+        Returns:
+            optimizer: the AdamW optimizer
+        '''
         # start with all of the candidate parameters
         param_dict = {pn: p for pn, p in self.named_parameters()}
         # filter out those that do not require grad

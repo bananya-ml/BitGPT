@@ -14,10 +14,10 @@ def ParseArgs():
     parser.add_argument('--block-size',type=int,default=256,metavar='N',
                         help='maximum context length for predictions(default: 256)')
     parser.add_argument('--max-iters',type=int,default=500000,metavar='N',
-                        help='number of epoch to train(default: 500000)')
-    parser.add_argument('--eval_iters',type=int,default=200,metavar='N',
+                        help='number of epochs to train(default: 500000)')
+    parser.add_argument('--eval-iters',type=int,default=200,metavar='N',
                         help='number of batches used to estimate loss during eval(default: 200)')
-    parser.add_argument('--eval_interval',type=int,default=2000,metavar='N',
+    parser.add_argument('--eval-interval',type=int,default=2000,metavar='N',
                         help='interval after which eval is performed(default: 2000)')                        
     parser.add_argument('--lr',type=float,default=6e-4,metavar='LR',
                         help='learning rate(default: 1e-3)')
@@ -27,7 +27,7 @@ def ParseArgs():
                         help='number of layers of the transformer architecture(default: 4)')
     parser.add_argument('--n-embd',type=float,default=384,metavar='M',
                         help='embedding dimension(default: 384)')
-    parser.add_argument('--dropout',type=float,default=0.2,metavar='S',
+    parser.add_argument('--dropout', '--d',type=float,default=0.2,metavar='S',
                         help='dropout value(default: 0.2)')
     parser.add_argument('--weight-decay','--wd',type=float,default=1e-1,metavar='WD',
                         help='weight decay(default: 1e-1)')
@@ -39,12 +39,10 @@ def ParseArgs():
                         help='should be ~= max_iters per Chinchilla(default: 500000)')
     parser.add_argument('--min-lr',type=int,default=6e-5,metavar='S',
                         help='should be learning rate/10 per Chinchilla(default: 6e-5)')
-    parser.add_argument('--wandb_log',type=bool,default=False,metavar='S',
+    parser.add_argument('--wandb-log',type=bool,default=False,metavar='S',
                         help='logging using wandb(default: False)')
     parser.add_argument('--seed',type=int,default=1337,metavar='S',
                         help='random seed(default: 1337)')
-    parser.add_argument('--log-interval',type=int,default=100,metavar='N',
-                        help='how many batches to wait before logging training status')
     
     args = parser.parse_args()
     return args
@@ -108,9 +106,9 @@ def estimate_loss():
 args = ParseArgs()
 
 # hyperparameters
-batch_size = 128  # how many independent sequences will we process in parallel?
+batch_size = 12  # how many independent sequences will we process in parallel?
 block_size = 256  # what is the maximum context length for predictions?
-eval_interval = 2000
+eval_interval = 200
 eval_iters = 200
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device_type = 'cuda' if 'cuda' in device else 'cpu'
@@ -131,9 +129,9 @@ weight_decay = 1e-1
 
 #for lr scheduler
 decay_lr = True # whether to decay the learning rate
-warmup_iters = 200 # how many steps to warm up for
-lr_decay_iters = 50000 # should be ~= max_iters per Chinchilla
-min_lr = 6e-5 # minimum learning rate, should be ~= learning_rate/10 per Chinchilla
+warmup_iters = 200 
+lr_decay_iters = 50000 
+min_lr = 6e-5 
 
 
 best_val_loss = 1e9
@@ -146,15 +144,15 @@ wandb_project = 'bitGPT'
 
 torch.manual_seed(1337)
 
-with open(os.path.join(os.getcwd(),'data\\shakespeare.txt'), 'r', encoding='utf-8') as f:
+with open(os.path.join(os.getcwd(),'data/shakespeare.txt'), 'r', encoding='utf-8') as f:
     text = f.read()
 
-#chars = sorted(list(set(text)))
-
-#vocab_size = len(chars) # for individual characters as elements
 vocab_size: int = 50304 # GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
 
 '''
+chars = sorted(list(set(text)))
+vocab_size = len(chars) # for individual characters as elements
+
 stoi = {ch: i for i, ch in enumerate(chars)}
 itos = {i: ch for i, ch in enumerate(chars)}
 
@@ -239,4 +237,4 @@ checkpoint = {
                     'config': config,
                     'meta': meta
                 }
-#torch.save(checkpoint, os.path.join(os.getcwd(), "models\\bitGPT.pt"))
+torch.save(checkpoint, os.path.join(os.getcwd(), "models/bitgpt.pt"))

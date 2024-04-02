@@ -9,7 +9,7 @@ subdirectory will usually contain a `model.py`, defining the architecture, and a
 
 The training script will allow you to train everything from a model with as little as 50k parameters to ones over 1B parameters. 
 
-## Install
+## Training
 
 Simply clone the repository
 
@@ -29,10 +29,10 @@ Remember, this downloads a CUDA-enabled version of PyTorch, which can take a whi
 $ pip install torch
 ```
 
-Once the installation is complete, run
+Once the installation is complete, from the root directory, you can run
 
 ```
-python train.py
+python ./gpt/train.py
 ```
 
 or
@@ -42,6 +42,27 @@ python ./bitgpt/train.py
 
 
 to train and save a model with the default settings. You might want to play around with the hyperparameters to balance speed and quality of your trained model.
+
+| Name           | Description                                       |Type  | Default Values |
+|----------------|---------------------------------------------------|------|----------------|
+|--batch-size    |Batch size for training                            |int   |64              |
+|--block-size    |Maximum context length for predictions             |int   |256             |
+|--max-iters     |Number of epochs to train                          |int   |500000          |
+|--eval-iters    |Number of batches used to estimate loss during eval|int   |200             |
+|-eval-interval  |Interval after which eval is performed             |int   |2000            |  
+|--lr            |Learning rate                                      |float |6e-4            |
+|--n-head        |Number of heads in the transformer architecture    |float |4               |
+|--n-layer       |Number of layers of the transformer architecture   |float |4               |
+|--n-embd        |Embedding dimension                                |float |384             |
+|--dropout,--d   |Dropout value                                      |float |0.2             |
+|--weight-decay  |Weight decay                                       |float |1e-1            |
+|--decay-lr      |Flag for learning rate decay                       |bool  |True            |
+|--warmup-iters  |Steps to warmup lr decay                           |int   |200             |
+|--lr-decay-iters|Should be ~= max_iters per Chinchilla              |int   |500000          |
+|--min-lr        |Should be learning rate/10 per Chinchilla          |int   |6e-5            |
+|--wandb-log     |Logging using wandb (need to login to wandb first) |bool  |False           |
+|--seed          |Random seed                                        |int   |1337            |
+
 
 ## Inference
 
@@ -75,8 +96,6 @@ I will, in the future, try to add support for more types of datasets, e.g. an in
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-[Link to MIT License](https://opensource.org/licenses/MIT)
 
 ## References
 

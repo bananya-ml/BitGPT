@@ -39,7 +39,7 @@ or
 
 ```
 python ./bitgpt/train.py
-
+```
 
 to train and save a model with the default settings. You might want to play around with the hyperparameters to balance speed and quality of your trained model.
 

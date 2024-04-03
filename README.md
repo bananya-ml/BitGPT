@@ -97,8 +97,8 @@ I will, in the future, try to add support for more types of datasets, e.g. an in
 
 ## TODO
 
-- [ ] Rotatory Positonal Embedding [RoPE](https://arxiv.org/abs/2104.09864)\
-- [x] BPE encoding for training and inference\
+- [ ] Rotatory Positonal Embedding [RoPE](https://arxiv.org/abs/2104.09864)
+- [x] BPE encoding for training and inference
 - [ ] Chat style inference
 
 ## License

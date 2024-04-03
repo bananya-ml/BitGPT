@@ -43,27 +43,26 @@ python ./bitgpt/train.py
 
 to train and save a model with the default settings. You might want to play around with the hyperparameters to balance speed and quality of your trained model.
 
-| Name           | Description                                       |Type  | Default Values |
-|----------------|---------------------------------------------------|------|----------------|
-|--batch-size    |Batch size for training                            |int   |64              |
-|--block-size    |Maximum context length for predictions             |int   |256             |
-|--max-iters     |Number of epochs to train                          |int   |500000          |
-|--eval-iters    |Number of batches used to estimate loss during eval|int   |200             |
-|--eval-interval |Interval after which eval is performed             |int   |2000            |  
-|--lr            |Learning rate                                      |float |6e-4            |
-|--n-head        |Number of heads in the transformer architecture    |float |4               |
-|--n-layer       |Number of layers of the transformer architecture   |float |4               |
-|--n-embd        |Embedding dimension                                |float |384             |
-|--dropout,--d   |Dropout value                                      |float |0.2             |
-|--weight-decay  |Weight decay                                       |float |1e-1            |
-|--decay-lr      |Flag for learning rate decay                       |bool  |True            |
-|--warmup-iters  |Steps to warmup lr decay                           |int   |200             |
-|--lr-decay-iters|Should be ~= max_iters per Chinchilla              |int   |500000          |
-|--min-lr        |Should be learning rate/10 per Chinchilla          |int   |6e-5            |
-|--wandb-log     |Logging using wandb (need to login to wandb first) |bool  |False           |
-|--seed          |Random seed                                        |int   |1337            |
-|--verbose       |set to 1 to see all recommended tunable parameters,|int   |0               |
-|                |2 to see all parameters                            |      |                |
+| Name           | Description                                          |Type  | Default Values |
+|----------------|------------------------------------------------------|------|   :---------:  |
+|--batch-size    |Batch size for training                               |int   |64              |
+|--block-size    |Maximum context length for predictions                |int   |256             |
+|--max-iters     |Number of epochs to train                             |int   |500000          |
+|--eval-iters    |Number of batches used to estimate loss during eval   |int   |200             |
+|--eval-interval |Interval after which eval is performed                |int   |2000            |  
+|--lr            |Learning rate                                         |float |6e-4            |
+|--n-head        |Number of heads in the transformer architecture       |float |4               |
+|--n-layer       |Number of layers of the transformer architecture      |float |4               |
+|--n-embd        |Embedding dimension                                   |float |384             |
+|--dropout,--d   |Dropout value                                         |float |0.2             |
+|--weight-decay  |Weight decay                                          |float |1e-1            |
+|--decay-lr      |Flag for learning rate decay                          |bool  |True            |
+|--warmup-iters  |Steps to warmup lr decay                              |int   |200             |
+|--lr-decay-iters|Should be ~= max_iters per Chinchilla                 |int   |500000          |
+|--min-lr        |Should be learning rate/10 per Chinchilla             |int   |6e-5            |
+|--wandb-log     |Logging using wandb (need to login to wandb first)    |bool  |False           |
+|--seed          |Random seed                                           |int   |1337            |
+|--verbose       |1 = recommended tunable parameters, 2 = all parameters|int   |0               |
 
 
 ## Inference
@@ -77,7 +76,7 @@ python ./gpt/generate.py
 from the root directory of the project. The following arguments can be used with the `generate.py` file to tune the output:
 
 | Name           | Description                                                                |Type  | Default Values |
-|----------------|----------------------------------------------------------------------------|------|----------------|
+|----------------|----------------------------------------------------------------------------|------|   :--------:   |
 |--prompt        |Generation from the model follows the prompt                                |str   |''              |
 |--num-samples   |Number of samples to generate                                               |int   |2               |
 |--max-new-tokens|Maximum context length for predictions                                      |int   |2000            |
@@ -98,9 +97,9 @@ I will, in the future, try to add support for more types of datasets, e.g. an in
 
 ## TODO
 
-[ ] Rotatory Positonal Embedding [RoPE](https://arxiv.org/abs/2104.09864)\
-[x] BPE encoding for training and inference\
-[ ] Chat style inference
+- [ ] Rotatory Positonal Embedding [RoPE](https://arxiv.org/abs/2104.09864)\
+- [x] BPE encoding for training and inference\
+- [ ] Chat style inference
 
 ## License
 

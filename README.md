@@ -3,8 +3,8 @@
 BitGPT is an attempt at including the best practices of building a language model, while providing the user with as much accessibility and flexibility as possible. The 1-bit version is adapted from the paper 
 [The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits](https://arxiv.org/abs/2402.17764), originally created for the [LLama model](https://github.com/meta-llama/llama).
 
-Like Andrej's tutorial, the model currently contains only a minimal decoder-only architecture (instead of an entire transformer), however, I hope to add some missing elements (like [RoPE](https://arxiv.org/abs/2104.09864)), OpenAI's BPE encoding
-and other possible components to integrate the best components of the current open-source models. The project is divided into organised categories, for both easy comparison and understanding. Each present (and hopefully, any future)
+Like Andrej's tutorial, the model currently contains only a minimal decoder-only architecture (instead of an entire transformer), however, I hope to add some missing elements (like [RoPE](https://arxiv.org/abs/2104.09864)),
+and other possible components and techniques to integrate the best performing parts of the current open-source models. The project is divided into organised categories, for both easy comparison and understanding. Each present (and hopefully, any future)
 subdirectory will usually contain a `model.py`, defining the architecture, and a `train.py`, a script used for training the model. 
 
 The training script will allow you to train everything from a model with as little as 50k parameters to ones over 1B parameters. 
@@ -49,7 +49,7 @@ to train and save a model with the default settings. You might want to play arou
 |--block-size    |Maximum context length for predictions             |int   |256             |
 |--max-iters     |Number of epochs to train                          |int   |500000          |
 |--eval-iters    |Number of batches used to estimate loss during eval|int   |200             |
-|-eval-interval  |Interval after which eval is performed             |int   |2000            |  
+|--eval-interval |Interval after which eval is performed             |int   |2000            |  
 |--lr            |Learning rate                                      |float |6e-4            |
 |--n-head        |Number of heads in the transformer architecture    |float |4               |
 |--n-layer       |Number of layers of the transformer architecture   |float |4               |
@@ -62,6 +62,8 @@ to train and save a model with the default settings. You might want to play arou
 |--min-lr        |Should be learning rate/10 per Chinchilla          |int   |6e-5            |
 |--wandb-log     |Logging using wandb (need to login to wandb first) |bool  |False           |
 |--seed          |Random seed                                        |int   |1337            |
+|--verbose       |set to 1 to see all recommended tunable parameters,|int   |0               |
+|                |2 to see all parameters                            |      |                |
 
 
 ## Inference
@@ -92,6 +94,14 @@ machine learning and spectroscopy. Either file can be chosen as the training dat
 to be use the custom dataset.
 
 I will, in the future, try to add support for more types of datasets, e.g. an instruction dataset, as I add greater functionality to use the trained model, e.g. as a chatbot. 
+
+
+## TODO
+
+[ ] Rotatory Positonal Embedding [RoPE](https://arxiv.org/abs/2104.09864)
+[x] BPE encoding for training and inference
+[ ] Chat style inference
+
 
 ## License
 

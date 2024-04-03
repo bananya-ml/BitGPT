@@ -20,20 +20,6 @@ def ParseArgs():
     args = parser.parse_args()
     return args
 
-'''
-with open(os.path.join(os.getcwd(),'data\\shakespeare.txt'), 'r', encoding='utf-8') as f:
-    text = f.read()
-
-chars = sorted(list(set(text)))
-stoi = {ch: i for i, ch in enumerate(chars)}
-itos = {i: ch for i, ch in enumerate(chars)}
-
-# encoder: take a string, output a list of integers
-def encode(s): return [stoi[c] for c in s]
-# decoder: take a list of integers, output a string
-def decode(l): return ''.join([itos[i] for i in l])
-'''
-
 args = ParseArgs()
 
 prompt = args.prompt
@@ -49,7 +35,7 @@ ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torc
 ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=device_type, dtype=ptdtype)
 
 
-ckpt = torch.load(os.path.join(os.getcwd(), "models/bitgpt.pt"))
+ckpt = torch.load(os.path.join(os.getcwd(), "models/bitGPT.pt"))
 
 config = BitGPTConfig(**ckpt['model_args'])
 model = BitGPTLanguageModel(config)

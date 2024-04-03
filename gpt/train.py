@@ -7,12 +7,54 @@ import os
 import math
 import argparse
 
+def printArgs(args, beta1, beta2):
+    if args.verbose == 1:
+        print("Recommended tunable parameters:")
+        print(f"    batch-size: {args.batch_size}")
+        print(f"    block-size: {args.block_size}")
+        print(f"    max-iters: {args.max_iters}")
+        print(f"    eval-iters: {args.eval_iters}")
+        print(f"    eval-interval: {args.eval_interval}")
+        print(f"    lr: {args.lr}")
+        print(f"    n-head: {args.n_head}")
+        print(f"    n-layer: {args.n_layer}")
+        print(f"    n-embd: {args.n_embd}")
+        print(f"    dropout: {args.dropout}")
+        print(f"    weight-decay: {args.weight_decay}")
+        print(f"    decay-lr: {args.decay_lr}")
+        print(f"    warmup-iters: {args.warmup_iters}")
+        print(f"    lr-decay-iters: {args.lr_decay_iters}")
+        print(f"    min-lr: {args.min_lr}")
+        print(f"    wandb-log: {args.wandb_log}")
+        print(f"    seed: {args.seed}")
+    elif args.verbose == 2:
+        print("All parameters:")
+        print(f"    batch-size: {args.batch_size}")
+        print(f"    block-size: {args.block_size}")
+        print(f"    max-iters: {args.max_iters}")
+        print(f"    eval-iters: {args.eval_iters}")
+        print(f"    eval-interval: {args.eval_interval}")
+        print(f"    lr: {args.lr}")
+        print(f"    n-head: {args.n_head}")
+        print(f"    n-layer: {args.n_layer}")
+        print(f"    n-embd: {args.n_embd}")
+        print(f"    beta1: {beta1}")
+        print(f"    beta2: {beta2}")
+        print(f"    dropout: {args.dropout}")
+        print(f"    weight-decay: {args.weight_decay}")
+        print(f"    decay-lr: {args.decay_lr}")
+        print(f"    warmup-iters: {args.warmup_iters}")
+        print(f"    lr-decay-iters: {args.lr_decay_iters}")
+        print(f"    min-lr: {args.min_lr}")
+        print(f"    wandb-log: {args.wandb_log}")
+        print(f"    seed: {args.seed}")
+
 def ParseArgs():
     parser = argparse.ArgumentParser(description='GPT model')
-    parser.add_argument('--batch-size',type=int,default=64,metavar='N',
-                        help='batch size for training(default: 64)')
-    parser.add_argument('--block-size',type=int,default=256,metavar='N',
-                        help='maximum context length for predictions(default: 256)')
+    parser.add_argument('--batch-size',type=int,default=12,metavar='N',
+                        help='batch size for training(default: 12)')
+    parser.add_argument('--block-size',type=int,default=128,metavar='N',
+                        help='maximum context length for predictions(default: 128)')
     parser.add_argument('--max-iters',type=int,default=500000,metavar='N',
                         help='number of epochs to train(default: 500000)')
     parser.add_argument('--eval-iters',type=int,default=200,metavar='N',
@@ -25,8 +67,8 @@ def ParseArgs():
                         help='number of heads in the transformer architecture(default: 4)')
     parser.add_argument('--n-layer',type=float,default=4,metavar='M',
                         help='number of layers of the transformer architecture(default: 4)')
-    parser.add_argument('--n-embd',type=float,default=384,metavar='M',
-                        help='embedding dimension(default: 384)')
+    parser.add_argument('--n-embd',type=float,default=512,metavar='M',
+                        help='embedding dimension(default: 512)')
     parser.add_argument('--dropout', '--d',type=float,default=0.2,metavar='S',
                         help='dropout value(default: 0.2)')
     parser.add_argument('--weight-decay','--wd',type=float,default=1e-1,metavar='WD',
@@ -43,6 +85,8 @@ def ParseArgs():
                         help='logging using wandb(default: False)')
     parser.add_argument('--seed',type=int,default=1337,metavar='S',
                         help='random seed(default: 1337)')
+    parser.add_argument('--verbose',type=int,default=0,metavar='S',
+                        help='set to 1 to see all recommended tunable parameters, 2 to see all parameters(default: 0)')
     
     args = parser.parse_args()
     return args
@@ -94,61 +138,49 @@ def estimate_loss():
 args = ParseArgs()
 
 # hyperparameters
-batch_size = 12  # how many independent sequences will we process in parallel?
-block_size = 128  # what is the maximum context length for predictions?
-eval_interval = 2000
-eval_iters = 200
+batch_size = args.batch_size  # how many independent sequences will we process in parallel?
+block_size = args.block_size  # what is the maximum context length for predictions?
+eval_interval = args.eval_interval
+eval_iters = args.eval_iters
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device_type = 'cuda' if 'cuda' in device else 'cpu'
 print(f"Using {device} for training")
 
 # model
-n_embd = 256
-n_head = 4
-n_layer = 4
-dropout = 0.2
+n_embd = args.n_embd
+n_head = args.n_head
+n_layer = args.n_embd
+dropout = args.dropout
 
 # optimizer
-max_iters = 50000
-learning_rate = 6e-4
+max_iters = args.max_iters
+learning_rate = args.lr
 beta1 = 0.9
 beta2= 0.95
-weight_decay = 1e-1
+weight_decay = args.weight_decay
 
 #for lr scheduler
-decay_lr = True
-warmup_iters = 200
-lr_decay_iters = 50000
-min_lr = 6e-5
+decay_lr = args.decay_lr
+warmup_iters = args.warmup_iters
+lr_decay_iters = args.lr_decay_iters
+min_lr = args.min_lr
 
 
 best_val_loss = 1e9
 inference = False
 
 #wandb logging
-wandb_log = False
+wandb_log = args.wandb_log
 wandb_project = 'GPT'
 # ------------
 
+printArgs(args, beta1, beta2)
 torch.manual_seed(1337)
 
 with open(os.path.join(os.getcwd(),'data/astro.txt'), encoding='utf-8') as f:
     text = f.read()
 
 vocab_size: int = 50304 # GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
-
-'''
-chars = sorted(list(set(text)))
-vocab_size = len(chars) # for individual characters as elements
-
-stoi = {ch: i for i, ch in enumerate(chars)}
-itos = {i: ch for i, ch in enumerate(chars)}
-
-# encoder: take a string, output a list of integers
-def encode(s): return [stoi[c] for c in s]
-# decoder: take a list of integers, output a string
-def decode(l): return ''.join([itos[i] for i in l])
-'''
 
 enc = tiktoken.get_encoding("gpt2")
 encode = lambda s: enc.encode(s, allowed_special={"<|endoftext|>"})
